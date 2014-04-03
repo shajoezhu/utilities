@@ -204,7 +204,7 @@ def diCal_figure (cum_change, tmrca, position, prefix):
     pl.title("Dical Absorption time (Green)")
     pl.xlabel("Sequence base")
     pl.ylabel("TMRCA (2N0)")
-    pl.savefig( prefix + "pfARG_heat" + ".png")
+    pl.savefig( prefix + "diCal_absorption_time" + ".png")
     pl.close()
 
 
