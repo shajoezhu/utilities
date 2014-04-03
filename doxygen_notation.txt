@@ -1,0 +1,22 @@
+/** @defgroup group_compare Simulation comparisons
+ *  
+ */
+
+
+/** @defgroup group_compare_dical diCal
+*@ingroup group_compare
+*/
+ 
+/** @defgroup group_compare_msmc MSMC
+*@ingroup group_compare
+*/
+
+/** @defgroup group_compare_pfarg pfARG
+*@ingroup group_compare
+*/
+
+/** @defgroup group_compare_psmc PSMC
+*@ingroup group_compare
+*/
+
+

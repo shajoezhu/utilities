@@ -1,0 +1,11 @@
+method: pfARG
+Case: open
+EMsteps: 10
+replicates: 15
+nsample: 2
+pattern: 3+2+2+2+2+2+3
+# ms, pfARG, diCal specific
+fixed_seed: True        
+# pfARG specific
+Nparticle: 1000
+lag: 2
