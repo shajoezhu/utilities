@@ -66,7 +66,7 @@ class program_parameters :
         return `np.random.random_integers(0, 1000, 1)[0]`
     
     
-    
+## @ingroup group_compare_psmc
 def psmc_calling ( top_param, ms_param, ith_call):
     top_param.ith_run = ith_call
     EMsteps  = top_param.EMsteps    
@@ -95,6 +95,7 @@ def psmc_calling ( top_param, ms_param, ith_call):
     
     
     
+## @ingroup group_compare_msmc
 def msmc_calling ( top_param, ms_param, ith_call ):
     top_param.ith_run = ith_call
     #mutation_rate     = 0.01443 # ms_param.t / seqlen     # mutation rate, scaled by 2Ne, however, ms parameters were scaled by 4Ne
@@ -117,6 +118,7 @@ def msmc_calling ( top_param, ms_param, ith_call ):
     
     
     
+## @ingroup group_compare_dical
 def diCal_calling ( top_param, ms_param, ith_call ):
     top_param.ith_run = ith_call
     top_time = ms_param.topTime2N0() # Note that diCal, top time are scaled by 2N0
@@ -146,7 +148,7 @@ def diCal_calling ( top_param, ms_param, ith_call ):
     return diCal_commond
     
 
-
+## @ingroup group_compare_pfarg
 def pfARG_calling ( top_param, ms_param, ith_call ):
     top_param.ith_run = ith_call
     #top_time = ms_param.topTime() # Note in pfARG, mutation, recombination and branch length are all scaled by 4N0
@@ -184,6 +186,7 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
     return pfARG_command
 
 
+## @ingroup group_compare_psmc
 def interpret_psmc(top_param = program_parameters(), scaling_method = "2N0", year = 1, ylog10scale = False ):
     if top_param.ylog10scale:
         ylog10scale = True
@@ -273,6 +276,7 @@ def interpret_psmc(top_param = program_parameters(), scaling_method = "2N0", yea
     pylab.savefig( dir_name + ".pdf" )
     pylab.close()
     
+## @ingroup group_compare_msmc
 def interpret_msmc(top_param = program_parameters(), scaling_method = "2N0", year = 1, ylog10scale = False ):
     if scaling_method == "generation":
         scaling_method = "years"
@@ -329,6 +333,8 @@ def interpret_msmc(top_param = program_parameters(), scaling_method = "2N0", yea
     pylab.savefig( dir_name + ".pdf" )            
     pylab.close()            
             
+
+## @ingroup group_compare_pfarg            
 def interpret_pfARG( top_param = program_parameters(), scaling_method = "2N0", year = 1, ylog10scale = False ):
     if top_param.ylog10scale:
         ylog10scale = True
@@ -387,7 +393,10 @@ def interpret_pfARG( top_param = program_parameters(), scaling_method = "2N0", y
             outputFile.close()
     pylab.savefig( dir_name + ".pdf" )            
     pylab.close()        
-                        
+
+
+
+## @ingroup group_compare_dical
 def interpret_diCal(top_param = program_parameters(), scaling_method = "2N0", year = 1 , ylog10scale = False ):
     if top_param.ylog10scale:
         ylog10scale = True
@@ -461,6 +470,8 @@ def interpret_diCal(top_param = program_parameters(), scaling_method = "2N0", ye
     pylab.savefig( dir_name + ".pdf" )
     pylab.close()
 
+
+## @ingroup group_compare_dical
 def run_diCal ( top_param ):
     case       = top_param.case
     replicates = top_param.replicates
@@ -497,7 +508,7 @@ def run_diCal ( top_param ):
         os.system("mv " + ms_param.ms_out_file_prefix +"* " + dir_name)
         
         
-
+## @ingroup group_compare_psmc
 def run_psmc ( top_param ):
     case       = top_param.case
     replicates = top_param.replicates
@@ -540,8 +551,9 @@ def run_psmc ( top_param ):
             
         ##### Cleaning up the current directory ####
         os.system("mv " + ms_param.ms_out_file_prefix +"* " + dir_name)
-        
-        
+
+
+## @ingroup group_compare_pfarg        
 def run_pfARG ( top_param ):
     case       = top_param.case
     replicates = top_param.replicates
@@ -611,11 +623,11 @@ def run_all_simulations( experiment_name , top_param ):
     if top_param.pfARG :     
         run_pfARG ( top_param )
         interpret_pfARG ( top_param )
-    
-    
+        
     if top_param.diCal :
         run_diCal ( top_param )
         interpret_diCal ( top_param )
+
         
 if __name__ == "__main__":
     try:

@@ -109,6 +109,7 @@ def random_pick( probabilities ):
         
 
 
+## @ingroup group_compare_msmc
 def generate_msmc_in ( msmc_input_file_prefix, position, seqlen, seg, num_taxa, python_seed = 0 ):
     """
     Generate msmc input data
@@ -146,7 +147,7 @@ def generate_msmc_in ( msmc_input_file_prefix, position, seqlen, seg, num_taxa, 
     msmc.close()
 
 
-
+## @ingroup group_compare_msmc
 def To_msmc(arg1, arg2, arg3, arg4, python_seed = 0):
     seqlen                 = int(arg1)
     position_file_name     = arg2
@@ -157,12 +158,12 @@ def To_msmc(arg1, arg2, arg3, arg4, python_seed = 0):
     generate_msmc_in (msmc_input_file_prefix, position, seqlen, seg, num_taxa, python_seed)
 
 
-
+## @ingroup group_compare_msmc
 def Help_msmc():
     print "        %s msmc  <seqlen>  <position_file_name>  <segsites_file_name>  <msmc_input_file_prefix>" % sys.argv[0]
     
 
-
+## @ingroup group_compare_pfarg            
 def generate_vcf( vcf_prefix, position, seqlen, seg, num_taxa, python_seed = 0 ):
     """
     Generate sequence data file in fasta format
@@ -198,7 +199,7 @@ def generate_vcf( vcf_prefix, position, seqlen, seg, num_taxa, python_seed = 0 )
     vcf.close()
 
 
-
+## @ingroup group_compare_pfarg            
 def To_vcf( arg1, arg2, arg3, arg4, python_seed = 0 ):
     seqlen             = int(arg1)
     position_file_name = arg2
@@ -211,12 +212,13 @@ def To_vcf( arg1, arg2, arg3, arg4, python_seed = 0 ):
     generate_vcf ( vcf_prefix, position, seqlen, seg, num_taxa, python_seed )
 
 
-
+## @ingroup group_compare_pfarg            
 def Help_vcf():
     print "        %s vcf   <seqlen>  <position_file_name>  <segsites_file_name>  <vcf_file_prefix>" % sys.argv[0]
     
 
 
+## @ingroup group_compare_dical
 def generate_diCal_data ( diCal_input_prefix, position, seqlen, seg, num_taxa, python_seed = 0 ):
     """
     Generate sequence data file in fasta format
@@ -275,6 +277,7 @@ def generate_diCal_data ( diCal_input_prefix, position, seqlen, seg, num_taxa, p
 
 
 
+## @ingroup group_compare_dical
 def generate_diCal_param (diCal_input_prefix, mu, rho):   
     """
     Generate diCal parameter file
@@ -305,6 +308,7 @@ def generate_diCal_param (diCal_input_prefix, mu, rho):
     
 
 
+## @ingroup group_compare_dical
 def To_diCal(arg1, arg2, arg3, arg4, arg5, arg6, python_seed = 0):
     seqlen             = int(arg1)
     position_file_name = arg2
@@ -321,13 +325,14 @@ def To_diCal(arg1, arg2, arg3, arg4, arg5, arg6, python_seed = 0):
     print "diCal data generated"
 
 
-
+## @ingroup group_compare_dical
 def Help_diCal():
      print "        %s diCal <seqlen>  <position_file_name>  <segsites_file_name>  <mu>  <rho>  <diCal_input_prefix> " % sys.argv[0]
      print "            mu: Mutation rate (per site per generation) "
      print "           rho: Recombination rate (per adjacent loci breakpoint, per generation)"
 
 
+## @ingroup group_compare_psmc
 def generate_psmc_concatenate (psmc_input_file_prefix, position, seqlen, seg, num_taxa, python_seed):
     """
     Concaternate multiple sequences for Generating single nucleotide mutation data for psmc
@@ -358,6 +363,7 @@ def generate_psmc_concatenate (psmc_input_file_prefix, position, seqlen, seg, nu
     psmc.close()
 
 
+## @ingroup group_compare_psmc
 def generate_psmc_in ( seqlen, position, psmc_input_file_prefix, python_seed = 0 ):    
     """
     Generate single nucleotide mutation data for psmc
@@ -384,7 +390,7 @@ def generate_psmc_in ( seqlen, position, psmc_input_file_prefix, python_seed = 0
     psmc.close()
 
 
-
+## @ingroup group_compare_psmc
 def To_psmc( arg1, arg2, arg3, python_seed = 0 ):
     seqlen                 = int(arg1)
     position_file_name     = arg2
@@ -394,6 +400,7 @@ def To_psmc( arg1, arg2, arg3, python_seed = 0 ):
 
 
 
+## @ingroup group_compare_psmc
 def To_psmc_concatenate(arg1, arg2, arg3, arg4, python_seed = 0):
     seqlen                 = int(arg1)
     position_file_name     = arg2
@@ -404,7 +411,7 @@ def To_psmc_concatenate(arg1, arg2, arg3, arg4, python_seed = 0):
     generate_psmc_concatenate (psmc_input_file_prefix, position, seqlen, seg, num_taxa, python_seed)
 
 
-
+## @ingroup group_compare_psmc
 def Help_psmc():
     print "        %s psmc  <seqlen>  <position_file_name>  <psmc_input_file_prefix>" % sys.argv[0]
     

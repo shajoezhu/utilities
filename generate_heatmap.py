@@ -11,6 +11,7 @@ sys.path.append("/home/joezhu/oxford-svn/utility")
 import ms2something as ms
 
 
+## @ingroup group_compare_psmc
 def psmc_XYZ( prefix ):
     print "./grep_prob.sh " + prefix
     os.system("./grep_prob.sh " + prefix)
@@ -41,6 +42,7 @@ def psmc_XYZ( prefix ):
 
 
 
+## @ingroup group_compare_psmc
 def psmc_figure(cum_change, tmrca, position, prefix):
     X, Y, Z, site, time = psmc_XYZ( prefix )
     fig = pl.figure(figsize=(24,7)) 
@@ -63,6 +65,8 @@ def psmc_figure(cum_change, tmrca, position, prefix):
     print "done"
     pl.close()
     
+
+## @ingroup group_compare_pfarg            
 def read_pfARG_data( file_name ):
     pfARG_data = []
     base = []
@@ -85,7 +89,7 @@ def read_pfARG_data( file_name ):
     return pfARG_data, base
 
 
-
+## @ingroup group_compare_pfarg            
 def makeHeatmatrix(x, y, WEIGHT, TMRCA):
     xlength = len(x)
     ylength = len(y)
@@ -122,6 +126,8 @@ def makeHeatmatrix(x, y, WEIGHT, TMRCA):
         Z.append(z)
     return np.asarray(Z).transpose()
 
+
+## @ingroup group_compare_pfarg            
 def pfARG_XYZ( prefix ):
     WEIGHT, x = read_pfARG_data( prefix + "WEIGHT" )
     TMRCA, x  = read_pfARG_data( prefix + "TMRCA" )
@@ -134,7 +140,8 @@ def pfARG_XYZ( prefix ):
     X, Y = np.meshgrid( x, y )
     return X, Y, Z, x, y
 
-    
+
+## @ingroup group_compare_pfarg            
 def pfARG_figure(cum_change, tmrca, position, prefix):
     X, Y, Z, site, time = pfARG_XYZ( prefix )
     
@@ -156,6 +163,7 @@ def pfARG_figure(cum_change, tmrca, position, prefix):
     pl.savefig( prefix + "pfARG_heat" + ".png")
     pl.close()
 
+
 def get_cum_change( file_name ):
     change_file = open( file_name, "r" )
     cum_change = [0]
@@ -163,6 +171,7 @@ def get_cum_change( file_name ):
         cum_change.append( cum_change[len(cum_change)-1] + int(line.strip()))
     change_file.close()
     return cum_change    
+
 
 def get_tmrca( file_name ):
     tmrca_file = open( file_name, "r")
@@ -173,6 +182,7 @@ def get_tmrca( file_name ):
     return tmrca
 
 
+## @ingroup group_compare_dical
 def extract_diCal_time ( prefix ):
     file_name = prefix + "diCalout"
     dc_file = open( file_name, "r")
@@ -191,6 +201,7 @@ def extract_diCal_time ( prefix ):
     return site, absorptionTime
 
 
+## @ingroup group_compare_dical            
 def diCal_figure (cum_change, tmrca, position, prefix):
     tmrca = [x*2 for x in tmrca] # convert tmrca from unit of 4Ne to 2Ne
     site, absorptionTime = extract_diCal_time ( prefix )
@@ -208,6 +219,7 @@ def diCal_figure (cum_change, tmrca, position, prefix):
     pl.close()
 
 
+## @ingroup group_compare_dical
 def diCal_lines (arg1, arg2):
     prefix = arg1
     seqlen = int(arg2)
@@ -217,6 +229,7 @@ def diCal_lines (arg1, arg2):
     diCal_figure(cum_change, tmrca, position, prefix)
 
 
+## @ingroup group_compare_pfarg            
 def pfARG_heat (arg1, arg2):
     prefix = arg1
     seqlen = int(arg2)
@@ -224,7 +237,9 @@ def pfARG_heat (arg1, arg2):
     tmrca = get_tmrca ( prefix + "mstmrca")
     position = ms.get_position ( seqlen, prefix + "position")
     pfARG_figure(cum_change, tmrca, position, prefix)
+
     
+## @ingroup group_compare_psmc
 def psmc_heat (arg1, arg2):
     prefix = arg1
     seqlen = int(arg2)
