@@ -1,10 +1,19 @@
-"""
-Population structures
-"""
+#!/usr/bin/env python
+
+import sys
+
+sys.path.append("/home/szh41/oxford-svn/utility")
+sys.path.append("/Users/joezhu/oxford-svn/utility")
+sys.path.append("/home/joezhu/oxford-svn/utility")
 
 import pylab as pl
 import numpy as np
 import os
+import ms2something as ms
+"""
+Population structures
+"""
+
 
 __space__ = " "
 
@@ -397,8 +406,9 @@ class ms_param_of_case :
             ms_command += "-eN" + __space__ + `self.Time[i]` + __space__ + `self.pop[i]` + __space__ 
     
         if self.fixed_seed: 
-            ms_command += "-seed " + __space__ + self.ms_seed(ith_run) + __space__
-    
+            #ms_command += "-seed " + __space__ + self.ms_seed(ith_run) + __space__
+            ms_command += "-seed " + __space__ + `ith_run` + __space__ + `ith_run` + __space__ + `ith_run` + __space__
+            
         if True:
             ms_command += "-p 10" + __space__
         
@@ -490,3 +500,17 @@ class ms_param_of_case :
         command_file.write(self.ms_command +'\n')
         command_file.write(command + '\n')
         command_file.close()
+        
+if __name__ == "__main__":
+    try:
+        _case = sys.argv[1]
+        _nsam = int(sys.argv[2])
+        _ith_run = int(sys.argv[3])
+        #print _case, _nsam, _ith_run
+        _param = ms_param_of_case( _case )
+        _param.fixed_seed = True
+        _param.printing() 
+        _param.simulate( _nsam, ith_run = _ith_run )
+        ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix)
+    except:
+        print "oops"
