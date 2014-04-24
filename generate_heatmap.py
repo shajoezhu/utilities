@@ -238,35 +238,25 @@ def pfARG_heat (arg1, arg2):
     position = ms.get_position ( seqlen, prefix + "position")
     pfARG_figure(cum_change, tmrca, position, prefix)
 
+
 def pfARG_survivor_XYZ( prefix ):
     Z, x = read_pfARG_data( prefix + "SURVIVOR" )
-
-    #TMRCA_max = 2
-    numof_y = len(ancestor[0]); # number of grids on the (y-axis)
-    #y = np.linspace(0, TMRCA_max, numof_y)
+    numof_y = len(Z[0]); # number of grids on the (y-axis)
     y = range(numof_y)
-    #Z = makeHeatmatrix(x, y, WEIGHT, TMRCA)
+    Z= np.array(np.transpose(Z))
     X, Y = np.meshgrid( x, y )
-    return X, Y, Z
+    return X, Y, Z, x, y
 
 def pfARG_survivor ( prefix ):
-    X, Y, Z, site, particles = pfARG_survivor_XYZ( prefix )
-    
+    X, Y, Z, site, particles = pfARG_survivor_XYZ( prefix )    
     fig = pl.figure(figsize=(24,7)) 
     pl.pcolor(X, Y, Z)
     my_axes = fig.gca()
-    #ylabels = ["%.4g" % (float(y)) for y in my_axes.get_yticks()]
-    #my_axes.set_yticklabels(ylabels)
-    
-    #pl.colorbar()
-    #pl.step(cum_change, [x*4*default_pop_size for x in tmrca] , color = "red", linewidth=5.0)
-    #pl.step(cum_change, tmrca , color = "red", linewidth=5.0)
-    #pl.plot(position, [0.9*max(time)]*len(position), "wo")    
     pl.axis([min(site), max(site) , 0, max(particles)])
-    pl.title("PFPSMC heat map")
+    pl.title("PFPSMC Survivors")
     pl.xlabel("Sequence base")
     #pl.ylabel("TMRCA (generation)")
-    pl.ylabel("TMRCA (4N0)")
+    pl.ylabel("Particles")
     pl.savefig( prefix + "pfARG_survivor" + ".png")
     pl.close()
 
