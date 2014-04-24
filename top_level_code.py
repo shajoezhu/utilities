@@ -579,7 +579,8 @@ def run_pfARG ( top_param ):
         
         if top_param.heat:
             heat.pfARG_heat(ms_param.ms_out_file_prefix, `ms_param.seqlen`)       
-        
+            heat.pfARG_survivor( ms_param.ms_out_file_prefix )
+            
         ##### Cleaning up the current directory ####
         os.system("mv " + ms_param.ms_out_file_prefix +"* " + dir_name)    
 
