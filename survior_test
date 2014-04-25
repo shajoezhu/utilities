@@ -6,6 +6,6 @@ nsample: 4
 # ms, pfARG, diCal specific
 fixed_seed: True        
 # pfARG specific
-Nparticle: 100000
+Nparticle: 30000
 lag: 2
 heat
