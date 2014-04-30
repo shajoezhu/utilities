@@ -1,9 +1,9 @@
 method: pfARG
-Case: diCal-S1
+Case: sim-YH
 EMsteps: 20
-replicates: 1
+replicates: 15
 nsample: 2
-pattern: 2+3+2+2+2+2+3
+pattern: 1*4+25*2+1*4+1*6
 # ms, pfARG, diCal specific
 fixed_seed: True        
 # pfARG specific
