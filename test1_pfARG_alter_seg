@@ -1,11 +1,11 @@
 method: pfARG
 Case: diCal-S1
-EMsteps: 20
-replicates: 5
+EMsteps: 5
+replicates: 15
 nsample: 2
 pattern: 2+2+2+2+2+2+2
 # ms, pfARG, diCal specific
 fixed_seed: True        
 # pfARG specific
-Nparticle: 1000
+Nparticle: 10000
 lag: 2
