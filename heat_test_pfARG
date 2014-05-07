@@ -1,0 +1,12 @@
+method: pfARG 
+Case: Heat
+EMsteps: 0
+replicates: 1
+nsample: 2
+pattern: 10+10
+# ms, pfARG, diCal specific
+fixed_seed: True        
+# pfARG specific
+Nparticle: 1000
+lag: 2
+heat
