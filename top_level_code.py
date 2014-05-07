@@ -138,7 +138,7 @@ def diCal_calling ( top_param, ms_param, ith_call ):
         diCal_commond += "-l" + __space__ + "-c 2" + __space__ 
         
     if top_param.fixed_seed:                    
-        diCal_commond += "-s" + __space__ + top_param.top_seed() + __space__ 
+        diCal_commond += "-s" + __space__ + `ith_call` + __space__ 
         
     if top_param.heat:
         diCal_commond += "-d 3" + __space__ 
@@ -165,18 +165,18 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
                     "-log" + __space__ + \
                     "-p"   + __space__ + `top_param.pattern` + __space__ + \
                    "-tmax" + __space__ + `top_time` + __space__ + \
-                    "-o"   + __space__ + ms_param.ms_out_file_prefix + __space__
-
+                    "-o"   + __space__ + ms_param.ms_out_file_prefix + __space__ + \
+                    "-l" + __space__ + `top_param.pruning` + __space__ # to use smc
                     #"-lag" + __space__ + `top_param.lag * ms_param.seqlen / ms_param.r` + __space__ + \
 
     #x=float('nan')
     # x==x is false
-    if top_param.pruning == top_param.pruning:
-        pfARG_command += "-l" + __space__ + `top_param.pruning` + __space__ # to use smc
+    #if top_param.pruning == top_param.pruning:
+        #pfARG_command += "-l" + __space__ + `top_param.pruning` + __space__ # to use smc
         #pruneflag = "prune" + self.pruning
 
     if top_param.fixed_seed:
-        pfARG_command += "-seed" + __space__ + top_param.top_seed() + __space__
+        pfARG_command += "-seed" + __space__ + `ith_call` + __space__
         
     if top_param.online:
         pfARG_command += "-online" + __space__
@@ -603,7 +603,8 @@ def read_param_file ( experiment_name ):
         elif line.split()[0] == "leave_one_out": top_param.leave_one_out = True     
         elif line.split()[0] == "concatenate": top_param.concatenate = True                
         elif line.split()[0] == "heat":        top_param.heat       = True   
-        elif line.split()[0] == "ylog10scale": top_param.ylog10scale = True             
+        elif line.split()[0] == "ylog10scale": top_param.ylog10scale = True  
+        elif line.split()[0] == "pruning:":    top_param.pruning    = float(line.split()[1])
         elif line.split()[0] == "method:":
             top_param.psmc  = "psmc"  in line.split()
             top_param.pfARG = "pfARG" in line.split()
@@ -633,11 +634,11 @@ def run_all_simulations( experiment_name , top_param ):
 
         
 if __name__ == "__main__":
-    try:
-        top_param = read_param_file ( sys.argv[1] )
-        print sys.argv[1]
-        run_all_simulations ( sys.argv[1], top_param )
-            
-    except:
-        #print "Usage: %s  <seqlen>  <position_file_name>  <psmc_input_file_prefix>" % sys.argv[0]
-        sys.exit(1)
+    #try:
+    top_param = read_param_file ( sys.argv[1] )
+    print sys.argv[1]
+    run_all_simulations ( sys.argv[1], top_param )
+        
+    #except:
+        ##print "Usage: %s  <seqlen>  <position_file_name>  <psmc_input_file_prefix>" % sys.argv[0]
+        #sys.exit(1)

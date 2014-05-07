@@ -3,10 +3,9 @@ Case: Heat
 EMsteps: 0
 replicates: 10
 nsample: 2
-pattern: 10+10
 # ms, pfARG, diCal specific
-fixed_seed: True        
+fixed_seed: True
+pattern: 5+5+5+5
 # pfARG specific
-Nparticle: 1000
-lag: 2
+Nparticle: 10000
 heat

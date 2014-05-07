@@ -7,5 +7,4 @@ nsample: 2
 fixed_seed: True        
 # pfARG specific
 Nparticle: 1000
-lag: 2
 heat
