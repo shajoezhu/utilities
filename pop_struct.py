@@ -193,7 +193,7 @@ class ms_param_of_case :
         elif self.case == "open":
     #       -t 60000 -r 12000 30000000 -eN 0.01 0.05 -eN 0.0150 0.5 -eN 0.05 0.25 -eN 0.5 0.5
             self.scaling_N0 = 10**4
-            self.seqlen           = 10000
+            self.seqlen           = 10**6
             self.t                = .0100 * self.seqlen
             self.r                = 0.006 * self.seqlen           
             self.Time             = [0, 0.5, 1]

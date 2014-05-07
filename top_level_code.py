@@ -46,7 +46,7 @@ class program_parameters :
         
         # pfARG specific
         self.Nparticle = 1000
-        self.lag = 2
+        #self.lag = 2
         self.pruning = 0
         self.online = False
                 
@@ -159,7 +159,6 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
     pfARG_command = pfARG  + __space__ + \
                     "-EM"  + __space__ + `top_param.EMsteps` + __space__ + \
                     "-Np"  + __space__ + `top_param.Nparticle` + __space__ + \
-                    "-lag" + __space__ + `top_param.lag * ms_param.seqlen / ms_param.r` + __space__ + \
                     "-t"   + __space__ + `ms_param.t` + __space__ + \
                     "-r"   + __space__ + `ms_param.r` + __space__ + `ms_param.seqlen` + __space__ + \
                     "-vcf" + __space__ + ms_param.ms_out_file_prefix + ".vcf" + __space__ + \
@@ -167,6 +166,8 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
                     "-p"   + __space__ + `top_param.pattern` + __space__ + \
                    "-tmax" + __space__ + `top_time` + __space__ + \
                     "-o"   + __space__ + ms_param.ms_out_file_prefix + __space__
+
+                    #"-lag" + __space__ + `top_param.lag * ms_param.seqlen / ms_param.r` + __space__ + \
 
     #x=float('nan')
     # x==x is false
@@ -598,7 +599,7 @@ def read_param_file ( experiment_name ):
         elif line.split()[0] == "replicates:": top_param.replicates = int(line.split()[1])
         elif line.split()[0] == "nsample:":    top_param.nsample    = int(line.split()[1])
         elif line.split()[0] == "Nparticle:":  top_param.Nparticle  = int(line.split()[1])
-        elif line.split()[0] == "lag:":        top_param.lag        = float(line.split()[1])
+        #elif line.split()[0] == "lag:":        top_param.lag        = float(line.split()[1])
         elif line.split()[0] == "leave_one_out": top_param.leave_one_out = True     
         elif line.split()[0] == "concatenate": top_param.concatenate = True                
         elif line.split()[0] == "heat":        top_param.heat       = True   

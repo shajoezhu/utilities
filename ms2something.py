@@ -193,7 +193,10 @@ def generate_vcf( vcf_prefix, position, seqlen, seg, num_taxa, python_seed = 0 )
         line = str(1) + "\t" + str(int(position[i])) + "\t" +"rs0\tA\tT\t67\tPASS\tNS=2;\tGT"
         vcf.write(line)
         for j in range(0, num_taxa, 2):
-            data = "\t" + str(seg[j][i]) + "|" + str(seg[j+1][i])
+            #print "i = ",i, "j = ",j, "seg size = ", len(seg), " " , len(seg[0])," " , len(seg[1])," " , len(seg[2])," " , len(seg[3])
+            data = "\t" + str(seg[j][i]) 
+            vcf.write(data)
+            data = "|" + str(seg[j+1][i])
             vcf.write(data)
         vcf.write( "\n" )
     vcf.close()
@@ -208,7 +211,6 @@ def To_vcf( arg1, arg2, arg3, arg4, python_seed = 0 ):
     
     position           = get_position ( seqlen, position_file_name )
     seg, num_taxa      = get_seg ( seg_file_name )
-    
     generate_vcf ( vcf_prefix, position, seqlen, seg, num_taxa, python_seed )
 
 
@@ -418,37 +420,37 @@ def Help_psmc():
 
 
 if __name__ == "__main__":
-    try:
-        if sys.argv[1] == "diCal":
-            To_diCal( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6], sys.argv[7] )
-            
-        elif sys.argv[1] == "psmc":
-            To_psmc ( sys.argv[2], sys.argv[3], sys.argv[4] )
-            
-        elif sys.argv[1] == "msmc":
-            To_msmc ( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5] )
-            
-        elif sys.argv[1] == "vcf":
-            To_vcf  ( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5] )
-            
-    except:
-        print "Usage: "
-        print "    %s  <Method>  <seqlen>  <position_file_name>  [ options ] <output_prefix> " % sys.argv[0]    
-        print "      Method: diCal, psmc, msmc, or vcf"
-        print "      seqlen: Sequence length"
-        print " "
-        print "Method: "
-        print "    diCal"
-        Help_diCal()
-        print " "
-        print "    psmc"
-        Help_psmc()
-        print " "      
-        print "    msmc"
-        Help_msmc()
-        print " "
-        print "    vcf"
-        Help_vcf()
+    #try:
+    if sys.argv[1] == "diCal":
+        To_diCal( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6], sys.argv[7] )
         
-        sys.exit(1)
+    elif sys.argv[1] == "psmc":
+        To_psmc ( sys.argv[2], sys.argv[3], sys.argv[4] )
+        
+    elif sys.argv[1] == "msmc":
+        To_msmc ( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5] )
+        
+    elif sys.argv[1] == "vcf":
+        To_vcf  ( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5] )
+            
+    #except:
+        #print "Usage: "
+        #print "    %s  <Method>  <seqlen>  <position_file_name>  [ options ] <output_prefix> " % sys.argv[0]    
+        #print "      Method: diCal, psmc, msmc, or vcf"
+        #print "      seqlen: Sequence length"
+        #print " "
+        #print "Method: "
+        #print "    diCal"
+        #Help_diCal()
+        #print " "
+        #print "    psmc"
+        #Help_psmc()
+        #print " "      
+        #print "    msmc"
+        #Help_msmc()
+        #print " "
+        #print "    vcf"
+        #Help_vcf()
+        
+        #sys.exit(1)
     
