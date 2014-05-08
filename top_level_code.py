@@ -49,7 +49,7 @@ class program_parameters :
         #self.lag = 2
         self.pruning = 50000
         self.online = False
-                
+        self.sub    = False                
         # plotting
         self.ylog10scale = False
         self.heat = False
@@ -156,16 +156,17 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
     pfARG = "pf-ARG"    
     #pfARG = "../../src/pf-ARG_dbg"
     
+    sub = "_NA1" if top_param.sub else ""
     pfARG_command = pfARG  + __space__ + \
                     "-EM"  + __space__ + `top_param.EMsteps` + __space__ + \
                     "-Np"  + __space__ + `top_param.Nparticle` + __space__ + \
                     "-t"   + __space__ + `ms_param.t` + __space__ + \
                     "-r"   + __space__ + `ms_param.r` + __space__ + `ms_param.seqlen` + __space__ + \
-                    "-vcf" + __space__ + ms_param.ms_out_file_prefix + ".vcf" + __space__ + \
+                    "-vcf" + __space__ + ms_param.ms_out_file_prefix + sub + ".vcf" + __space__ + \
                     "-log" + __space__ + \
                     "-p"   + __space__ + `top_param.pattern` + __space__ + \
                    "-tmax" + __space__ + `top_time` + __space__ + \
-                    "-o"   + __space__ + ms_param.ms_out_file_prefix + __space__ + \
+                    "-o"   + __space__ + ms_param.ms_out_file_prefix + sub + __space__ + \
                     "-l" + __space__ + `top_param.pruning` + __space__ # to use smc
                     #"-lag" + __space__ + `top_param.lag * ms_param.seqlen / ms_param.r` + __space__ + \
 
@@ -560,6 +561,8 @@ def run_pfARG ( top_param ):
     replicates = top_param.replicates
     nsample    = top_param.nsample
     
+    sub = "_NA1" if top_param.sub else ""
+    
     dir_name = "pfARG" + case + "Samples" +`nsample`
     os.system("rm -r " + dir_name)
     os.system("mkdir " + dir_name)
@@ -572,6 +575,10 @@ def run_pfARG ( top_param ):
         
         ms.To_vcf(ms_param.seqlen, ms_param.position_file, ms_param.seg_file, ms_param.ms_out_file_prefix, python_seed = top_param.fixed_seed*ith_repeat)        
         
+        if ( top_param.sub ):
+            os.system("ln -s ~/bin/Vcf.pm .")
+            os.system("cat " + ms_param.ms_out_file_prefix + ".vcf | vcf-subset -c NA1 > " +  ms_param.ms_out_file_prefix + "_NA1.vcf" )        
+        
         pfARG_commond = pfARG_calling( top_param, ms_param, ith_repeat )
 
         print pfARG_commond
@@ -580,7 +587,7 @@ def run_pfARG ( top_param ):
         
         if top_param.heat:
             #heat.pfARG_survivor( ms_param.ms_out_file_prefix )
-            heat.pfARG_heat(ms_param.ms_out_file_prefix, `ms_param.seqlen`)       
+            heat.pfARG_heat(ms_param.ms_out_file_prefix, `ms_param.seqlen`, top_param.sub)       
             
             
         ##### Cleaning up the current directory ####
@@ -615,6 +622,7 @@ def read_param_file ( experiment_name ):
         elif line.split()[0] == "concatenate": top_param.concatenate = True                
         elif line.split()[0] == "heat":        top_param.heat       = True   
         elif line.split()[0] == "ylog10scale": top_param.ylog10scale = True  
+        elif line.split()[0] == "sub":         top_param.sub = True  
         elif line.split()[0] == "pruning:":    top_param.pruning    = int(line.split()[1])
         elif line.split()[0] == "method:":
             top_param.psmc  = "psmc"  in line.split()

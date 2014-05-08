@@ -230,13 +230,14 @@ def diCal_lines (arg1, arg2):
 
 
 ## @ingroup group_compare_pfarg            
-def pfARG_heat (arg1, arg2):
+def pfARG_heat (arg1, arg2, subbool = False):
+    sub = "_NA1" if subbool else ""
     prefix = arg1
     seqlen = int(arg2)
     cum_change = get_cum_change ( prefix + "mschange" )
     tmrca = get_tmrca ( prefix + "mstmrca")
     position = ms.get_position ( seqlen, prefix + "position")
-    pfARG_figure(cum_change, tmrca, position, prefix)
+    pfARG_figure(cum_change, tmrca, position, prefix+sub )
 
 
 def pfARG_survivor_XYZ( prefix ):
