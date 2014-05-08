@@ -47,7 +47,7 @@ class program_parameters :
         # pfARG specific
         self.Nparticle = 1000
         #self.lag = 2
-        self.pruning = 0
+        self.pruning = 50000
         self.online = False
                 
         # plotting
@@ -584,8 +584,19 @@ def run_pfARG ( top_param ):
             
             
         ##### Cleaning up the current directory ####
-        os.system("mv " + ms_param.ms_out_file_prefix +"* " + dir_name)    
-
+        #os.system("rm " + ms_param.ms_out_file_prefix )
+        #os.system("rm " + ms_param.position_file )
+	#os.system("rm " + seg_file
+        #tree_file 
+        #tmrca_file
+        #mschange_file 
+        #+ "TMRCA"
+        #+ "BL"
+        #+ "SURVIVOR"
+        #+ "WEIGHT"	
+	#os.system("mv " + ms_param.ms_out_file_prefix + "* " + dir_name)    
+        os.system ("mv *.png " + dir_name)
+        os.system ("rm " + ms_param.ms_out_file_prefix + "* ")   
 
 def read_param_file ( experiment_name ):
         
