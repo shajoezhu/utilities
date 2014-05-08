@@ -579,7 +579,7 @@ def run_pfARG ( top_param ):
         os.system(pfARG_commond)       
         
         if top_param.heat:
-            heat.pfARG_survivor( ms_param.ms_out_file_prefix )
+            #heat.pfARG_survivor( ms_param.ms_out_file_prefix )
             heat.pfARG_heat(ms_param.ms_out_file_prefix, `ms_param.seqlen`)       
             
             
@@ -604,7 +604,7 @@ def read_param_file ( experiment_name ):
         elif line.split()[0] == "concatenate": top_param.concatenate = True                
         elif line.split()[0] == "heat":        top_param.heat       = True   
         elif line.split()[0] == "ylog10scale": top_param.ylog10scale = True  
-        elif line.split()[0] == "pruning:":    top_param.pruning    = float(line.split()[1])
+        elif line.split()[0] == "pruning:":    top_param.pruning    = int(line.split()[1])
         elif line.split()[0] == "method:":
             top_param.psmc  = "psmc"  in line.split()
             top_param.pfARG = "pfARG" in line.split()
