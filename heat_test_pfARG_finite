@@ -11,3 +11,4 @@ fixed_seed: True
 Nparticle: 10000
 lag: 100000
 heat
+finite

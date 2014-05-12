@@ -49,7 +49,8 @@ class program_parameters :
         #self.lag = 2
         self.pruning = 50000
         self.online = False
-        self.sub    = False                
+        self.sub    = False
+        self.finite = False                
         # plotting
         self.ylog10scale = False
         self.heat = False
@@ -184,6 +185,9 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
 
     if top_param.heat:
         pfARG_command += "-heat" + __space__
+        
+    if top_param.finite:
+        pfARG_command += "-finite" + __space__        
 
     return pfARG_command
 
@@ -623,6 +627,7 @@ def read_param_file ( experiment_name ):
         elif line.split()[0] == "heat":        top_param.heat       = True   
         elif line.split()[0] == "ylog10scale": top_param.ylog10scale = True  
         elif line.split()[0] == "sub":         top_param.sub = True  
+        elif line.split()[0] == "finite":      top_param.finite = True  
         elif line.split()[0] == "pruning:":    top_param.pruning    = int(line.split()[1])
         elif line.split()[0] == "method:":
             top_param.psmc  = "psmc"  in line.split()
