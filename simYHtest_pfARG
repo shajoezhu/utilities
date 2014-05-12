@@ -1,0 +1,10 @@
+method: pfARG
+Case: sim-YH
+EMsteps: 20
+replicates: 15
+nsample: 2
+pattern: 1*4+25*2+1*4+1*6
+# ms, pfARG, diCal specific
+fixed_seed: True        
+# pfARG specific
+Nparticle: 1000
