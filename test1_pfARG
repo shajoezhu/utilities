@@ -8,5 +8,5 @@ pattern: 2+3+2+2+1+1+1+1+2+1
 # ms, pfARG, diCal specific
 fixed_seed: True        
 # pfARG specific
-Nparticle: 1000
+Nparticle: 100
 lag: 2
