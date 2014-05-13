@@ -369,16 +369,19 @@ def interpret_pfARG( top_param = program_parameters(), scaling_method = "2N0", y
         ms_out_file_prefix = ms_param.case + \
                              "Samples" +`nsample` + \
                              "msdata" + `ith_run`
-
+        
         outputFile_name = dir_name + "/" + ms_out_file_prefix + "Ne"
+        #print outputFile_name
         if os.path.isfile( outputFile_name ):
+            print outputFile_name
             outputFile = open ( outputFile_name, "r")
             tmp_time , tmp_Ne = [] , []        
 
             for line in outputFile:
-                time_i, Ne_i = line.split("\t")
-                tmp_time.append ( float(time_i) )
-                tmp_Ne.append ( float(Ne_i) )
+                if line.split()[0] == "NE":
+                    Nechar, time_i, Ne_i = line.split("\t")
+                    tmp_time.append ( float(time_i) )
+                    tmp_Ne.append ( float(Ne_i) )
 
             N0 = float(ms_param.scaling_N0)
 
@@ -397,6 +400,8 @@ def interpret_pfARG( top_param = program_parameters(), scaling_method = "2N0", y
             pop.insert(0, pop[0])  
             pylab.step(time, pop , color = "red", linewidth=2.0)
             outputFile.close()
+        else:
+            print "no "+  outputFile_name
     pylab.savefig( dir_name + ".pdf" )            
     pylab.close()        
 
