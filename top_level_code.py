@@ -597,10 +597,11 @@ def run_pfARG ( top_param ):
         if top_param.heat:
             #heat.pfARG_survivor( ms_param.ms_out_file_prefix )
             heat.pfARG_heat(ms_param.ms_out_file_prefix, `ms_param.seqlen`, top_param.sub)       
+            os.system ("mv *.png " + dir_name)
             os.system ("rm " + ms_param.ms_out_file_prefix + "* ")               
             
 	    os.system("mv " + ms_param.ms_out_file_prefix + "* " + dir_name)    
-        #os.system ("mv *.png " + dir_name)
+        #
 
 def read_param_file ( experiment_name ):
         
