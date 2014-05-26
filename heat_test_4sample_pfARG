@@ -8,5 +8,5 @@ pruning: 50000
 # ms, pfARG, diCal specific
 fixed_seed: True        
 # pfARG specific
-Nparticle: 50000
+Nparticle: 20000
 heat
