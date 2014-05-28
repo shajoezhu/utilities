@@ -202,9 +202,9 @@ class ms_param_of_case :
         elif self.case == "close":
     #       -t 60000 -r 12000 30000000 -eN 0.01 0.05 -eN 0.0150 0.5 -eN 0.05 0.25 -eN 0.5 0.5
             self.scaling_N0 = 10**4
-            self.t                = 100
-            self.r                = 60
-            self.seqlen           = 100
+            self.seqlen           = 10**6
+            self.t                = .0100 * self.seqlen
+            self.r                = 0.006 * self.seqlen  
             self.Time             = [0, 0.5, 1]
             self.pop              = [1, 2, 3]
          
@@ -260,17 +260,17 @@ class ms_param_of_case :
          
         elif self.case == "wakeley_a":
             self.scaling_N0 = 10**4
-            self.t                = 100
-            self.r                = 60
-            self.seqlen           = 100
+            self.seqlen           = 10**6
+            self.t                = .0100 * self.seqlen
+            self.r                = 0.006 * self.seqlen  
             self.Time             = [0, 4]
             self.pop              = [1, .25]
          
         elif self.case == "wakeley_b":
             self.scaling_N0 = 10**4
-            self.t                = 100
-            self.r                = 60
-            self.seqlen           = 100
+            self.seqlen           = 10**6
+            self.t                = .0100 * self.seqlen
+            self.r                = 0.006 * self.seqlen  
             self.Time             = [0, 4]
             self.pop              = [1, 4]
         
