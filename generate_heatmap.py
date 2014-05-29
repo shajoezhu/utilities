@@ -10,7 +10,7 @@ sys.path.append("/Users/joezhu/oxford-svn/utility")
 sys.path.append("/home/joezhu/oxford-svn/utility")
 import ms2something as ms
 
-shifting = 2
+shifting = 3
 
 ## @ingroup group_compare_psmc
 def psmc_XYZ( prefix ):
