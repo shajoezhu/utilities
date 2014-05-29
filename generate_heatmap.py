@@ -10,6 +10,7 @@ sys.path.append("/Users/joezhu/oxford-svn/utility")
 sys.path.append("/home/joezhu/oxford-svn/utility")
 import ms2something as ms
 
+shifting = 2
 
 ## @ingroup group_compare_psmc
 def psmc_XYZ( prefix ):
@@ -95,6 +96,7 @@ def makeHeatmatrix(x, y, WEIGHT, TMRCA):
     ylength = len(y)
     WEIGHT = np.array(WEIGHT)
     TMRCA  = np.array(TMRCA)
+    #print TMRCA
     Z = []
     for xi in range(xlength):
         weight = []
@@ -104,7 +106,6 @@ def makeHeatmatrix(x, y, WEIGHT, TMRCA):
         tmrca = []
         for ti in range(len(TMRCA[0])):
             tmrca.append(TMRCA[xi][ti])
-                
         z = []
         zindx = ylength - 2
         upper = y[ zindx+1 ];
@@ -120,6 +121,7 @@ def makeHeatmatrix(x, y, WEIGHT, TMRCA):
             upper=lower;
         z.reverse()
         zcolsum = 0
+        #print z
         for zi in z: zcolsum += zi
         #z = [ (zi / zcolsum)**0.45 for zi in z] # For better presentation
         z = [ (zi / zcolsum) for zi in z]
@@ -133,7 +135,7 @@ def pfARG_XYZ( prefix ):
     TMRCA, x  = read_pfARG_data( prefix + "TMRCA" )
     #default_pop_size = 10000
     #TMRCA_max = 10 * default_pop_size
-    TMRCA_max = 2
+    TMRCA_max = 2 + shifting
     numof_y = 50; # number of grids on the TMRCA (y-axis)
     y = np.linspace(0, TMRCA_max, numof_y)
     Z = makeHeatmatrix(x, y, WEIGHT, TMRCA)
@@ -144,18 +146,20 @@ def pfARG_XYZ( prefix ):
 ## @ingroup group_compare_pfarg            
 def pfARG_figure(cum_change, tmrca, position, prefix):
     X, Y, Z, site, time = pfARG_XYZ( prefix )
-    
     fig = pl.figure(figsize=(24,7)) 
     pl.pcolor(X, Y, Z, vmin=0, vmax=0.15)
     my_axes = fig.gca()
-    ylabels = ["%.4g" % (float(y)) for y in my_axes.get_yticks()]
+    ylabels = ["%.4g" % (float(y)+shifting) for y in my_axes.get_yticks()]
     my_axes.set_yticklabels(ylabels)
     
     pl.colorbar()
     #pl.step(cum_change, [x*4*default_pop_size for x in tmrca] , color = "red", linewidth=5.0)
     pl.step(cum_change, tmrca , color = "red", linewidth=5.0)
     pl.plot(position, [0.9*max(time)]*len(position), "wo")    
-    pl.axis([min(site), max(site) , 0, max(time)])
+    
+    #pl.axis([min(site), max(site) , 0, max(time)])
+    pl.axis([min(site), max(site) , shifting, max(time)])  # for the case of split
+
     pl.title("PFPSMC heat map")
     pl.xlabel("Sequence base")
     #pl.ylabel("TMRCA (generation)")
@@ -274,9 +278,9 @@ def psmc_heat (arg1, arg2):
 
 
 if __name__ == "__main__":
-    try:
+    #try:
         pfARG_heat (sys.argv[1], sys.argv[2])
-        psmc_heat  (sys.argv[1], sys.argv[2])
-    except:
-        print "something wrong"
-        sys.exit(1)
+        #psmc_heat  (sys.argv[1], sys.argv[2])
+    #except:
+        #print "something wrong"
+        #sys.exit(1)
