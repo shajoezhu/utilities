@@ -19,8 +19,8 @@ class program_parameters :
         self.case = "open"        
         
         self.EMsteps = 20
-        self.replicates = 15
-        self.nsample = 2
+        self.replicates = 1
+        self.nsample = 4
 
         #self.pattern = "3+2+2+3"
         self.pattern = "3+2+2+2+2+2+3"
