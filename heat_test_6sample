@@ -4,9 +4,9 @@ EMsteps: 0
 replicates: 10
 nsample: 6
 pattern: 10+10
-pruning: 50000
+pruning: 0
 # ms, pfARG, diCal specific
 fixed_seed: True        
 # pfARG specific
-Nparticle: 50000
+Nparticle: 100000
 heat
