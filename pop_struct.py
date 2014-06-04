@@ -321,7 +321,8 @@ class ms_param_of_case :
         
         if timescale == "years":
             time = [ti * 4 * self.scaling_N0 * year for ti in time ]
-            pl.xlabel("Time (years, "+`year`+" years per generation)")    
+            #pl.xlabel("Time (years, "+`year`+" years per generation)")    
+            #pl.xlabel("Years")    
         elif timescale == "generation":
             time = [ti * 4 * self.scaling_N0 for ti in time ]
             pl.xlabel("Generations)")    
@@ -335,7 +336,7 @@ class ms_param_of_case :
             print "timescale must be one of \"4N0\", \"generation\", or \"years\""
             return
         
-        time[0] = time[1] / float(10)
+        time[0] = time[1] / float(20)
         
         time.append(time[-1] * 2)
         yaxis_scaler = 10000
@@ -343,18 +344,23 @@ class ms_param_of_case :
         pop = [popi * self.scaling_N0 / float(yaxis_scaler) for popi in pop ]
         pop.insert(0, pop[0])               
         pl.xscale ('log', basex = 10)        
-        pl.xlim(min(time), max(time))
-        
+        #pl.xlim(min(time), max(time))
+        pl.xlim(1e3, 1e7)
         
         if ylog10scale:
             pl.ylim(0.06, 10000)
             pl.yscale ('log', basey = 10)            
         else:
             pl.ylim(0, max(pop)+2)
-                
-        pl.step(time, pop , color = "black", linewidth=5.0)
-        pl.title ( self.case + " population structure" )
-        pl.ylabel("Pop size ($*$ "+`yaxis_scaler` +")")
+        
+        pl.ylim(0,5)            
+        pl.tick_params(labelsize=20)
+
+        pl.step(time, pop , color = "blue", linewidth=5.0)
+        pl.grid()
+        #pl.step(time, pop , color = "black", linewidth=5.0)
+        #pl.title ( self.case + " population structure" )
+        #pl.ylabel("Pop size ($*$ "+`yaxis_scaler` +")")
     
     
     def sim_file_names(self, nsam = 2, ith_run = 0):
