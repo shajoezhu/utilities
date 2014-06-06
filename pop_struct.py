@@ -321,7 +321,7 @@ class ms_param_of_case :
         
         if timescale == "years":
             time = [ti * 4 * self.scaling_N0 * year for ti in time ]
-            #pl.xlabel("Time (years, "+`year`+" years per generation)")    
+            pl.xlabel("Time (years, "+`year`+" years per generation)",  fontsize=20)    
             #pl.xlabel("Years")    
         elif timescale == "generation":
             time = [ti * 4 * self.scaling_N0 for ti in time ]
@@ -356,12 +356,13 @@ class ms_param_of_case :
         pl.ylim(0,5)            
         pl.tick_params(labelsize=20)
 
-        pl.step(time, pop , color = "blue", linewidth=5.0)
+        #pl.step(time, pop , color = "blue", linewidth=5.0)
+        pl.step(time, pop , color = "red", linewidth=5.0)
         pl.grid()
         #pl.step(time, pop , color = "black", linewidth=5.0)
         #pl.title ( self.case + " population structure" )
         #pl.ylabel("Pop size ($*$ "+`yaxis_scaler` +")")
-    
+        pl.ylabel("Effective population size",fontsize=20 )
     
     def sim_file_names(self, nsam = 2, ith_run = 0):
         """
