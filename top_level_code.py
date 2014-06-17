@@ -178,7 +178,7 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
         #pruneflag = "prune" + self.pruning
 
     if top_param.fixed_seed:
-        pfARG_command += "-seed" + __space__ + `ith_call` + __space__
+        pfARG_command += "-seed" + __space__ + `ith_call+1` + __space__ # as ith_call can be zero, and -seed 0 is random
         
     if top_param.online:
         pfARG_command += "-online" + __space__
@@ -598,7 +598,7 @@ def run_pfARG ( top_param ):
             #heat.pfARG_survivor( ms_param.ms_out_file_prefix )
             heat.pfARG_heat(ms_param.ms_out_file_prefix, `ms_param.seqlen`, top_param.sub)       
             os.system ("mv *.png " + dir_name)
-            #os.system ("rm " + ms_param.ms_out_file_prefix + "* ")               
+            os.system ("rm " + ms_param.ms_out_file_prefix + "* ")               
             
 	    os.system("mv " + ms_param.ms_out_file_prefix + "* " + dir_name)    
         #

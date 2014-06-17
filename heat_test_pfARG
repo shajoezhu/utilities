@@ -8,6 +8,6 @@ pruning: 0
 # ms, pfARG, diCal specific
 fixed_seed: True        
 # pfARG specific
-Nparticle: 100
+Nparticle: 10000
 lag: 100000
 heat
