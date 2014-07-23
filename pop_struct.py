@@ -36,6 +36,7 @@ class ms_param_of_case :
         if seqlen == "long":      self.seqlen = 3 * 10**7
         elif seqlen == "median":  self.seqlen =     10**6
         elif seqlen == "short":   self.seqlen = 5 * 10**5
+        elif seqlen == "whole-genome":      self.seqlen = 3 * 10**9
         
         self.t = self.t * float(self.seqlen)
         self.r = self.r * float(self.seqlen)
@@ -406,8 +407,11 @@ class ms_param_of_case :
         else:
             mutation_rate *= self.seqlen        
         
+        method = "ms"        
+        if ( self.seqlen > 10**9 ):
+            method = "scrm"
         # build ms command line for parameters, and execute
-        ms_command = "ms"                  + __space__ + \
+        ms_command = method                + __space__ + \
                      `nsam`                + __space__ + \
                      `num_loci`            + __space__ + \
                      "-t"                  + __space__ + \
@@ -425,9 +429,12 @@ class ms_param_of_case :
             #ms_command += "-seed " + __space__ + self.ms_seed(ith_run) + __space__
             ms_command += "-seed " + __space__ + `ith_run` + __space__ + `ith_run` + __space__ + `ith_run` + __space__
             
-        if True:
+        if method == "ms":
             ms_command += "-p 10" + __space__
-        
+            
+        if ( self.seqlen > 10**9 ):
+            ms_command += "-l 100000" + __space__
+            
         ms_command += ">" + __space__ + self.ms_out_file_prefix         
         print ms_command        
         self.ms_command = ms_command
@@ -519,15 +526,20 @@ class ms_param_of_case :
         command_file.close()
         
 if __name__ == "__main__":
-    try:
-        _case = sys.argv[1]
-        _nsam = int(sys.argv[2])
-        _ith_run = int(sys.argv[3])
-        #print _case, _nsam, _ith_run
-        _param = ms_param_of_case( _case )
-        _param.fixed_seed = True
-        _param.printing() 
-        _param.simulate( _nsam, ith_run = _ith_run )
-        ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix)
-    except:
-        print "oops"
+    #try:
+    _case = sys.argv[1]
+    _nsam = int(sys.argv[2])
+    _ith_run = int(sys.argv[3])
+    
+    #print _case, _nsam, _ith_run
+    _param = ms_param_of_case( _case )
+    _param.fixed_seed = True
+    _param.printing() 
+    
+    if len(sys.argv) > 4:
+        _param.post_init_process_seqlen( sys.argv[4] )
+        
+    _param.simulate( _nsam, ith_run = _ith_run )
+    ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix)
+    #except:
+        #print "oops"
