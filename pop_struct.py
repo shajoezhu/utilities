@@ -113,6 +113,15 @@ class ms_param_of_case :
             self.Time             = [0.01, 0.015, 0.05, 0.5]
             self.pop              = [0.05, 0.5, 0.25, 0.5]
          
+        elif self.case == "sim-1-modified":
+    #       -t 30000 -r 6000 30000000 -T -eN 0.05 0.1 -eN 0.07 1 -eN 0.2 0.5 -eN 0.8 1 -eN 1.5 2
+            self.scaling_N0 = 10**4
+            self.seqlen           = 3*10**7
+            self.t                = self.seqlen * 0.001
+            self.r                = self.seqlen * 0.0002
+            self.Time             = [0.05, 0.07, 0.2, 0.8, 1.5]
+            self.pop              = [0.1, 1, 0.5, 1, 2]
+         
         elif self.case == "sim-YH":
     #      -t 65130.39 -r 10973.82 30000000 -eN 0.0055 0.0832 -eN 0.0089 0.0489 \
     #-eN 0.0130 0.0607 -eN 0.0177 0.1072 -eN 0.0233 0.2093 -eN 0.0299 0.3630 \
