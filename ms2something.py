@@ -164,9 +164,9 @@ def Help_msmc():
     
 
 ## @ingroup group_compare_pfarg            
-def generate_vcf( vcf_prefix, position, seqlen, seg, num_taxa, python_seed = 0 ):
+def generate_vcf( vcf_prefix, position, seqlen, seg, num_taxa, file_type, python_seed = 0 ):
     """
-    Generate sequence data file in fasta format
+    Generate sequence data file in vcf/gvcf format
     
     Args:
         vcf_prefix: vcf data file prefix
@@ -179,19 +179,45 @@ def generate_vcf( vcf_prefix, position, seqlen, seg, num_taxa, python_seed = 0 )
         pass
     
     """
-    if python_seed > 0: np.random.seed( python_seed )
+    if python_seed > 0: np.random.seed( python_seed ) ## \todo to be implemented
 
-    vcf = open( vcf_prefix + ".vcf", 'w' )
-    vcf.write( "##fileformat=VCFv4.1\n" )
-    vcf.write( "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT" )
+    if file_type == "vcf":
+        vcf = open( vcf_prefix + ".vcf", 'w' )
+        vcf.write( "##fileformat=VCFv4.1\n" )
+        vcf.write( "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT" )
+    elif file_type == "gvcf":
+        vcf = open( vcf_prefix + ".gvcf", 'w' )
+        vcf.write( "##fileformat=GVCF\n" )
+        vcf.write( "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT" )    
+    elif file_type == "rgvcf":
+        vcf = open( vcf_prefix + ".rgvcf", 'w' )
+        vcf.write( "##fileformat=RGVCF\n" )
+        vcf.write( "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT" )        
+    else:
+        print "oops, check generate_vcf()"
+        sys.exit(1)
+    
     for j in range(num_taxa/2):
         name = "\tNA" + str(j+1)
         vcf.write(name)
     vcf.write("\n")
-    num_seg = len (position)
-    for i in range(num_seg):
-        line = str(1) + "\t" + str(int(position[i])) + "\t" +"rs0\tA\tT\t67\tPASS\tNS=2;\tGT"
+    
+    previous_position = int(0);
+    for i, position_i in enumerate( position ):
+        if (file_type == "gvcf") & (previous_position <= int(position_i)-1):
+            line = str(1) + "\t" + `previous_position+1` + "\t" +".\t.\t.\t0\tREFCALL;\tEND="+`int(position_i)-1`+";\tGT" # ignoring mutations type, only from A to T        
+            #line = str(1) + "\t" + `previous_position+1` + "\t" +".\tN\tT\t0\tREFCALL;\tEND="+`int(position_i)-1`+";\tGT" # ignoring mutations type, only from A to T        
+            #line = str(1) + "\t" + `previous_position+1` + "\t" +".\tT\tN\t0\tREFCALL;\tEND="+`int(position_i)-1`+";\tGT" # ignoring mutations type, only from A to T        
+
+            vcf.write(line)
+            for j in range(0, num_taxa, 2):
+                data = "\t./."
+                vcf.write(data)
+            vcf.write( "\n" )
+                
+        line = str(1) + "\t" + str(int(position_i)) + "\t" +"rs0\tA\tT\t67\tPASS\tNS=2;\tGT" # ignoring mutations type, only from A to T        
         vcf.write(line)
+        
         for j in range(0, num_taxa, 2):
             #print "i = ",i, "j = ",j, "seg size = ", len(seg), " " , len(seg[0])," " , len(seg[1])," " , len(seg[2])," " , len(seg[3])
             data = "\t" + str(seg[j][i]) 
@@ -199,19 +225,26 @@ def generate_vcf( vcf_prefix, position, seqlen, seg, num_taxa, python_seed = 0 )
             data = "|" + str(seg[j+1][i])
             vcf.write(data)
         vcf.write( "\n" )
+        previous_position = int(position_i)
+    if (file_type == "gvcf") & (previous_position <= int(seqlen) ):
+        line = str(1) + "\t" + `previous_position+1` + "\t" +".\t.\t.\t0\tREFCALL;\tEND="+`int(seqlen)`+";\tGT" # ignoring mutations type, only from A to T        
+        #line = str(1) + "\t" + `previous_position+1` + "\t" +".\tN\tT\t0\tREFCALL;\tEND="+`int(position_i)-1`+";\tGT" # ignoring mutations type, only from A to T        
+        #line = str(1) + "\t" + `previous_position+1` + "\t" +".\tT\tN\t0\tREFCALL;\tEND="+`int(position_i)-1`+";\tGT" # ignoring mutations type, only from A to T        
+
+        vcf.write(line)
+        for j in range(0, num_taxa, 2):
+            data = "\t./."
+            vcf.write(data)
+        vcf.write( "\n" )
     vcf.close()
 
 
 ## @ingroup group_compare_pfarg            
-def To_vcf( arg1, arg2, arg3, arg4, python_seed = 0 ):
-    seqlen             = int(arg1)
-    position_file_name = arg2
-    seg_file_name      = arg3
-    vcf_prefix         = arg4
-    
-    position           = get_position ( seqlen, position_file_name )
-    seg, num_taxa      = get_seg ( seg_file_name )
-    generate_vcf ( vcf_prefix, position, seqlen, seg, num_taxa, python_seed )
+def To_vcf( seqlen_in, position_file_name_in, seg_file_name_in, vcf_prefix_in, file_type_in, python_seed = 0 ):
+    seqlen             = int(seqlen_in)    
+    position           = get_position ( seqlen, position_file_name_in )
+    seg, num_taxa      = get_seg ( seg_file_name_in )
+    generate_vcf ( vcf_prefix_in, position, seqlen, seg, num_taxa, file_type_in, python_seed )
 
 
 ## @ingroup group_compare_pfarg            
@@ -431,8 +464,27 @@ if __name__ == "__main__":
         To_msmc ( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5] )
         
     elif sys.argv[1] == "vcf":
-        To_vcf  ( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5] )
-            
+        To_vcf  ( seqlen_in = sys.argv[2], 
+                  position_file_name_in = sys.argv[3], 
+                  seg_file_name_in = sys.argv[4], 
+                  vcf_prefix_in = sys.argv[5], 
+                  file_type_in = sys.argv[1] )
+
+    elif sys.argv[1] == "gvcf":
+        To_vcf  ( seqlen_in = sys.argv[2], 
+                  position_file_name_in = sys.argv[3], 
+                  seg_file_name_in = sys.argv[4], 
+                  vcf_prefix_in = sys.argv[5], 
+                  file_type_in = sys.argv[1] )
+
+    elif sys.argv[1] == "rgvcf":
+        To_vcf  ( seqlen_in = sys.argv[2], 
+                  position_file_name_in = sys.argv[3], 
+                  seg_file_name_in = sys.argv[4], 
+                  vcf_prefix_in = sys.argv[5], 
+                  file_type_in = sys.argv[1] )
+    else:
+        print "method is not recognised"            
     #except:
         #print "Usage: "
         #print "    %s  <Method>  <seqlen>  <position_file_name>  [ options ] <output_prefix> " % sys.argv[0]    
