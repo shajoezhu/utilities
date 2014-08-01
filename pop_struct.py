@@ -542,6 +542,6 @@ if __name__ == "__main__":
     _param.simulate( _nsam, ith_run = _ith_run )
     ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, "vcf")
     ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, "gvcf")
-    ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, "rgvcf")
+    #ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, "rgvcf")
     #except:
         #print "oops"
