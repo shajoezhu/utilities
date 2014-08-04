@@ -215,7 +215,7 @@ def generate_vcf( vcf_prefix, position, seqlen, seg, num_taxa, file_type, python
                 vcf.write(data)
             vcf.write( "\n" )
                 
-        line = str(1) + "\t" + str(int(position_i)) + "\t" +"rs0\tA\tT\t67\tPASS\tNS=2;\tGT" # ignoring mutations type, only from A to T        
+        line = str(1) + "\t" + `int(position_i)` + "\t" +"rs0\tA\tT\t67\tPASS\tNS=2;\tGT" # ignoring mutations type, only from A to T        
         vcf.write(line)
         
         for j in range(0, num_taxa, 2):
