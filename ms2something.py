@@ -204,7 +204,7 @@ def generate_vcf( vcf_prefix, position, seqlen, seg, num_taxa, file_type, python
     
     previous_position = int(0);
     for i, position_i in enumerate( position ):
-        if (file_type == "gvcf") & (previous_position <= int(position_i)-1):
+        if (file_type == "gvcf") & (previous_position < int(position_i)-1):
             line = str(1) + "\t" + `previous_position+1` + "\t" +".\t.\t.\t0\tREFCALL;\tEND="+`int(position_i)-1`+";\tGT" # ignoring mutations type, only from A to T        
             #line = str(1) + "\t" + `previous_position+1` + "\t" +".\tN\tT\t0\tREFCALL;\tEND="+`int(position_i)-1`+";\tGT" # ignoring mutations type, only from A to T        
             #line = str(1) + "\t" + `previous_position+1` + "\t" +".\tT\tN\t0\tREFCALL;\tEND="+`int(position_i)-1`+";\tGT" # ignoring mutations type, only from A to T        
