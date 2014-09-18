@@ -231,7 +231,7 @@ def diCal_lines (arg1, arg2):
     prefix = arg1
     seqlen = int(arg2)
     cum_change = get_cum_change ( prefix + "mschange" )
-    tmrca = get_tmrca ( prefix + "mstmrca")
+    tmrca = get_tmrca ( prefix + "tmrca")
     position = ms.get_position ( seqlen, prefix + "position")
     diCal_figure(cum_change, tmrca, position, prefix)
 
@@ -242,7 +242,7 @@ def pfARG_heat (arg1, arg2, subbool = False):
     prefix = arg1
     seqlen = int(arg2)
     cum_change = get_cum_change ( prefix + "mschange" )
-    tmrca = get_tmrca ( prefix + "mstmrca")
+    tmrca = get_tmrca ( prefix + "tmrca")
     position = ms.get_position ( seqlen, prefix + "position")
     pfARG_figure(cum_change, tmrca, position, prefix+sub )
 
@@ -275,7 +275,7 @@ def psmc_heat (arg1, arg2):
     prefix = arg1
     seqlen = int(arg2)
     cum_change = get_cum_change ( prefix + "mschange" )
-    tmrca = get_tmrca ( prefix + "mstmrca")
+    tmrca = get_tmrca ( prefix + "tmrca")
     position = ms.get_position ( seqlen, prefix + "position")
     psmc_figure(cum_change, tmrca, position, prefix)    
 

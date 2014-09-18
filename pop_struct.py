@@ -481,7 +481,7 @@ class ms_param_of_case :
         grep_seg        = "tail" + __space__ + "-"+`nsam` + __space__ + self.ms_out_file_prefix + " > " + self.seg_file 
         #print grep_seg
         grep_tree       = "grep \';\' " + self.ms_out_file_prefix + " | sed -e 's/\\[.*\\]//g' > " + self.tree_file     
-        grep_tmrca      = "hybrid-Lambda -gt " + self.tree_file + " -log -tmrca " + self.tmrca_file
+        grep_tmrca      = "hybrid-Lambda -gt " + self.tree_file + " -tmrca -o " + self.ms_out_file_prefix
         grep_changeat   = "grep \';\' " + self.ms_out_file_prefix + " | sed -e 's/\\[//g' | sed -e 's/\\].*;//g' > " + self.mschange_file
     
         os.system( grep_position   )
