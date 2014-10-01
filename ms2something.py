@@ -272,14 +272,14 @@ def generate_seg ( segement_prefix_in, position, seqlen, seg, num_taxa):
     sefement_file = open( segement_prefix_in + ".seg", 'w' )
     num_seg = len( position )
     position.append( float(seqlen) )
-    num_homozygous = int(round( position[0] - 0 )-1)
-    line = `int(0)` + "\t" + `num_homozygous` + "\t" + "T\t" + "T\t" + "F\t"
+    num_homozygous = int(round( position[0] - 1 ))
+    line = `int(1)` + "\t" + `num_homozygous` + "\t" + "T\t" + "T\t" + "F\t"
     sefement_file.write(line)
     for allele in range( num_taxa ):
         sefement_file.write( `0` )
     sefement_file.write("\n")
     for i in range( num_seg ):
-        num_homozygous = int(round( position[i+1] - position[i] ) - 1)
+        num_homozygous = int(round( position[i+1] - position[i] ))
         if num_homozygous > 0 :
             line = `int(position[i])` + "\t" + `num_homozygous` + "\t" + "T\t" + "T\t" + "F\t"
             sefement_file.write(line)
