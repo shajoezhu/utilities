@@ -247,6 +247,42 @@ def To_vcf( seqlen_in, position_file_name_in, seg_file_name_in, vcf_prefix_in, f
     generate_vcf ( vcf_prefix_in, position, seqlen, seg, num_taxa, file_type_in, python_seed )
 
 
+def To_seg( seqlen_in, position_file_name_in, seg_file_name_in, segement_prefix_in):
+    seqlen             = int(seqlen_in)    
+    position           = get_position ( seqlen, position_file_name_in )
+    seg, num_taxa      = get_seg ( seg_file_name_in )
+    generate_seg ( segement_prefix_in, position, seg, num_taxa)
+
+
+def generate_seg ( segement_prefix_in, position, seg, num_taxa):
+    """
+    Generate segement data
+    
+    Args:
+        segement_prefix_in: segment data file prefix
+        position: rescaled mutation position on sequence between 0 and seqlen
+        seg: list of segregating site data
+        num_taxa: number of taxa
+
+    Returns:
+        pass
+    
+    """
+
+    sefement_file = open( segement_prefix_in + ".seg", 'w' )
+    num_seg = len( position )
+    previous_position = 0
+    for i in range( num_seg ):
+        num_homozygous = int(round( position[i] - previous_position ))
+        if num_homozygous > 0 :
+            line = `int(previous_position)` + "\t" + `num_homozygous` + "\t" + "T\t" + "T\t" + "F\t"
+            sefement_file.write(line)
+            for allele in range( num_taxa ):
+                sefement_file.write( `seg[allele][i]` )                
+            sefement_file.write("\n")
+        previous_position = position[i]        
+    sefement_file.close()
+
 ## @ingroup group_compare_pfarg            
 def Help_vcf():
     print "        %s vcf   <seqlen>  <position_file_name>  <segsites_file_name>  <vcf_file_prefix>" % sys.argv[0]
@@ -463,6 +499,12 @@ if __name__ == "__main__":
     elif sys.argv[1] == "msmc":
         To_msmc ( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5] )
         
+    elif sys.argv[1] == "seg":
+        To_segement (seqlen_in = sys.argv[2], 
+                     position_file_name_in = sys.argv[3], 
+                     seg_file_name_in = sys.argv[4], 
+                     segement_prefix_in = sys.argv[5] )
+
     elif sys.argv[1] == "vcf":
         To_vcf  ( seqlen_in = sys.argv[2], 
                   position_file_name_in = sys.argv[3], 
