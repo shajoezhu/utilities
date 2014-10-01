@@ -63,7 +63,7 @@ def get_position( seqlen, position_file_name, scaled = True ):
     """
     print position_file_name
     position_file = open( position_file_name, 'r' )
-    position = [ float(x) for x in position_file.read().split() ] 
+    position = [ float(x) for x in position_file.read().split() ]
     position_file.close()
     if scaled:
         position = [ round( x * float(seqlen) ) for x in position ]
@@ -251,10 +251,10 @@ def To_seg( seqlen_in, position_file_name_in, seg_file_name_in, segement_prefix_
     seqlen             = int(seqlen_in)    
     position           = get_position ( seqlen, position_file_name_in )
     seg, num_taxa      = get_seg ( seg_file_name_in )
-    generate_seg ( segement_prefix_in, position, seg, num_taxa)
+    generate_seg ( segement_prefix_in, position, seqlen, seg, num_taxa)
 
 
-def generate_seg ( segement_prefix_in, position, seg, num_taxa):
+def generate_seg ( segement_prefix_in, position, seqlen, seg, num_taxa):
     """
     Generate segement data
     
@@ -271,16 +271,21 @@ def generate_seg ( segement_prefix_in, position, seg, num_taxa):
 
     sefement_file = open( segement_prefix_in + ".seg", 'w' )
     num_seg = len( position )
-    previous_position = 0
+    position.append( float(seqlen) )
+    num_homozygous = int(round( position[0] - 0 )-1)
+    line = `int(0)` + "\t" + `num_homozygous` + "\t" + "T\t" + "T\t" + "F\t"
+    sefement_file.write(line)
+    for allele in range( num_taxa ):
+        sefement_file.write( `0` )
+    sefement_file.write("\n")
     for i in range( num_seg ):
-        num_homozygous = int(round( position[i] - previous_position ))
+        num_homozygous = int(round( position[i+1] - position[i] ) - 1)
         if num_homozygous > 0 :
-            line = `int(previous_position)` + "\t" + `num_homozygous` + "\t" + "T\t" + "T\t" + "F\t"
+            line = `int(position[i])` + "\t" + `num_homozygous` + "\t" + "T\t" + "T\t" + "F\t"
             sefement_file.write(line)
             for allele in range( num_taxa ):
                 sefement_file.write( `seg[allele][i]` )                
             sefement_file.write("\n")
-        previous_position = position[i]        
     sefement_file.close()
 
 ## @ingroup group_compare_pfarg            
