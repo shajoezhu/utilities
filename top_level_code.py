@@ -159,6 +159,7 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
     
     sub = "_NA1" if top_param.sub else ""
     pfARG_command = pfARG  + __space__ + \
+                    "-nsam" + __space__ + `top_param.nsample` + __space__ + \
                     "-EM"  + __space__ + `top_param.EMsteps` + __space__ + \
                     "-Np"  + __space__ + `top_param.Nparticle` + __space__ + \
                     "-t"   + __space__ + `ms_param.t` + __space__ + \
