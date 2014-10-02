@@ -540,7 +540,7 @@ if __name__ == "__main__":
         _param.post_init_process_seqlen( sys.argv[4] )
         
     _param.simulate( _nsam, ith_run = _ith_run )
-    #seqlen_in, position_file_name_in, seg_file_name_in, segement_prefix_in
+    #seqlen_in, position_file_name_in, seg_file_name_in, segment_prefix_in
     ms.To_seg(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix)
     ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, "vcf")
     ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, "gvcf")

@@ -247,36 +247,39 @@ def To_vcf( seqlen_in, position_file_name_in, seg_file_name_in, vcf_prefix_in, f
     generate_vcf ( vcf_prefix_in, position, seqlen, seg, num_taxa, file_type_in, python_seed )
 
 
-def To_seg( seqlen_in, position_file_name_in, seg_file_name_in, segement_prefix_in):
+def To_seg( seqlen_in, position_file_name_in, seg_file_name_in, segment_prefix_in):
     seqlen             = int(seqlen_in)    
     position           = get_position ( seqlen, position_file_name_in )
     seg, num_taxa      = get_seg ( seg_file_name_in )
-    generate_seg ( segement_prefix_in, position, seqlen, seg, num_taxa)
+    generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa)
 
 
-def generate_seg ( segement_prefix_in, position, seqlen, seg, num_taxa):
+def generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa):
     """
-    Generate segement data
+    Generate segment data
+    
+    Each line consist with
+        Site(Segment start) Segment_length Segment_state variant_state(Segment start) genetic_break allelic_state 
     
     Args:
-        segement_prefix_in: segment data file prefix
+        segment_prefix_in: segment data file prefix
         position: rescaled mutation position on sequence between 0 and seqlen
         seg: list of segregating site data
         num_taxa: number of taxa
-
+    
     Returns:
         pass
     
     """
 
-    sefement_file = open( segement_prefix_in + ".seg", 'w' )
+    sefement_file = open( segment_prefix_in + ".seg", 'w' )
     num_seg = len( position )
     position.append( float(seqlen) )
     num_homozygous = int(round( position[0] - 1 ))
-    line = `int(1)` + "\t" + `num_homozygous` + "\t" + "T\t" + "T\t" + "F\t"
+    line = `int(1)` + "\t" + `num_homozygous` + "\t" + "T\t" + "F\t" + "F\t"
     sefement_file.write(line)
     for allele in range( num_taxa ):
-        sefement_file.write( `0` )
+        sefement_file.write( `2` ) # let 2 denote missing, easier to read in 
     sefement_file.write("\n")
     for i in range( num_seg ):
         num_homozygous = int(round( position[i+1] - position[i] ))
@@ -505,10 +508,10 @@ if __name__ == "__main__":
         To_msmc ( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5] )
         
     elif sys.argv[1] == "seg":
-        To_segement (seqlen_in = sys.argv[2], 
+        To_segment (seqlen_in = sys.argv[2], 
                      position_file_name_in = sys.argv[3], 
                      seg_file_name_in = sys.argv[4], 
-                     segement_prefix_in = sys.argv[5] )
+                     segment_prefix_in = sys.argv[5] )
 
     elif sys.argv[1] == "vcf":
         To_vcf  ( seqlen_in = sys.argv[2], 
