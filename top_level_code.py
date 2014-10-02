@@ -163,13 +163,14 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
                     "-Np"  + __space__ + `top_param.Nparticle` + __space__ + \
                     "-t"   + __space__ + `ms_param.t` + __space__ + \
                     "-r"   + __space__ + `ms_param.r` + __space__ + `ms_param.seqlen` + __space__ + \
-                    "-vcf" + __space__ + ms_param.ms_out_file_prefix + sub + ".vcf" + __space__ + \
+                    "-seg" + __space__ + ms_param.ms_out_file_prefix + sub + ".seg" + __space__ + \
                     "-p"   + __space__ + `top_param.pattern` + __space__ + \
                    "-tmax" + __space__ + `top_time` + __space__ + \
                     "-o"   + __space__ + ms_param.ms_out_file_prefix + sub + __space__ + \
                     "-l" + __space__ + `top_param.pruning` + __space__ # to use smc
                     #"-lag" + __space__ + `top_param.lag * ms_param.seqlen / ms_param.r` + __space__ + \
                     #"-log" + __space__ + \
+                    #"-vcf" + __space__ + ms_param.ms_out_file_prefix + sub + ".vcf" + __space__ + \
     #x=float('nan')
     # x==x is false
     #if top_param.pruning == top_param.pruning:
@@ -582,6 +583,7 @@ def run_pfARG ( top_param ):
         ms_param.simulate(nsam = nsample, num_loci = 1, ith_run = ith_repeat)
         
         ms.To_vcf(ms_param.seqlen, ms_param.position_file, ms_param.seg_file, ms_param.ms_out_file_prefix, "vcf", python_seed = top_param.fixed_seed*ith_repeat)        
+        ms.To_seg(ms_param.seqlen, ms_param.position_file, ms_param.seg_file, ms_param.ms_out_file_prefix)        
             #To_vcf( seqlen_in, position_file_name_in, seg_file_name_in, vcf_prefix_in, file_type_in, python_seed = 0 ):        
         if ( top_param.sub ):
             os.system("ln -s ~/bin/Vcf.pm .")
