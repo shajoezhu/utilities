@@ -247,19 +247,19 @@ def To_vcf( seqlen_in, position_file_name_in, seg_file_name_in, vcf_prefix_in, f
     generate_vcf ( vcf_prefix_in, position, seqlen, seg, num_taxa, file_type_in, python_seed )
 
 
-def To_seg( seqlen_in, position_file_name_in, seg_file_name_in, segment_prefix_in):
+def To_seg( seqlen_in, position_file_name_in, seg_file_name_in, segment_prefix_in, missing_data = False ):
     seqlen             = int(seqlen_in)    
     position           = get_position ( seqlen, position_file_name_in )
     seg, num_taxa      = get_seg ( seg_file_name_in )
-    generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa)
+    generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa, missing_data )
 
 
-def generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa):
+def generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa, missing_data = False):
     """
     Generate segment data
     
     Each line consist with
-        Site(Segment start) Segment_length Segment_state variant_state(Segment start) genetic_break allelic_state 
+        Site(Segment start) Segment_length Segment_state genetic_break allelic_state 
     
     Args:
         segment_prefix_in: segment data file prefix
@@ -276,18 +276,24 @@ def generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa):
     num_seg = len( position )
     position.append( float(seqlen) )
     num_homozygous = int(round( position[0] - 1 ))
-    line = `int(1)` + "\t" + `num_homozygous` + "\t" + "T\t" + "F\t" + "F\t"
+    seg_state = "F" if missing_data else "T"
+    line = `int(1)` + "\t" + `num_homozygous` + "\t" + seg_state + "\t" + "F\t1\t"
     sefement_file.write(line)
     for allele in range( num_taxa ):
-        sefement_file.write( `2` ) # let 2 denote missing, easier to read in 
+        sefement_file.write( "." ) # let 2 denote missing, easier to read in 
     sefement_file.write("\n")
     for i in range( num_seg ):
         num_homozygous = int(round( position[i+1] - position[i] ))
         if num_homozygous > 0 :
-            line = `int(position[i])` + "\t" + `num_homozygous` + "\t" + "T\t" + "T\t" + "F\t"
+            line = `int(position[i])` + "\t" + `num_homozygous` + "\t" + seg_state + "\t" + "F\t1\t"
             sefement_file.write(line)
             for allele in range( num_taxa ):
-                sefement_file.write( `seg[allele][i]` )                
+                seg_contant = "." if missing_data else `seg[allele][i]`
+                sefement_file.write( seg_contant )
+                #if missing_data: 
+                    #sefement_file.write( "." )
+                #else:
+                    #sefement_file.write( `seg[allele][i]` )
             sefement_file.write("\n")
     sefement_file.close()
 

@@ -37,7 +37,7 @@ class ms_param_of_case :
         elif seqlen == "median":  self.seqlen =     10**6
         elif seqlen == "short":   self.seqlen = 5 * 10**5
         elif seqlen == "whole-genome":      self.seqlen = 3 * 10**9
-        
+        else : return
         self.t = self.t * float(self.seqlen)
         self.r = self.r * float(self.seqlen)
         
@@ -536,12 +536,22 @@ if __name__ == "__main__":
     _param.fixed_seed = True
     _param.printing() 
     
+    _missing = False
     if len(sys.argv) > 4:
-        _param.post_init_process_seqlen( sys.argv[4] )
+        if sys.argv[4] == "missing":
+            _missing = True
+        else:            
+            _param.post_init_process_seqlen( sys.argv[4] )
+            
+    if len(sys.argv) > 5:
+        if sys.argv[5] == "missing":
+            _missing = True
+        else:            
+            _param.post_init_process_seqlen( sys.argv[4] )            
         
     _param.simulate( _nsam, ith_run = _ith_run )
     #seqlen_in, position_file_name_in, seg_file_name_in, segment_prefix_in
-    ms.To_seg(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix)
+    ms.To_seg(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, _missing )
     ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, "vcf")
     ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, "gvcf")
     #ms.To_vcf(`_param.seqlen`, _param.position_file, _param.seg_file, _param.ms_out_file_prefix, "rgvcf")
