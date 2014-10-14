@@ -143,7 +143,7 @@ class something2seg:
             
 def print_usage():
     print "USAGE:"
-    print "    ./vcf2seg -i infile.vcf -seqlen 200000"
+    print "    ./vcf2seg -i FILENAME -seqlen INT"
     sys.exit()
 
 
