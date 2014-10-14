@@ -10,5 +10,5 @@ diff sim-1Samples2msdata1.seg sim-1.seg
 
 ```bash
 ./vcf2seg.py -i sim-1Samples2msdata1.gvcf -seqlen 30000000
-diff 1Samples2msdata1.seg sim-1.seg
+mv sim-1Samples2msdata1.seg sim-1gvcf.seg
 ```

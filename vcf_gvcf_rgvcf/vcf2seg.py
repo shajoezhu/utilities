@@ -69,7 +69,7 @@ class something2seg:
         #print self.line_index, infile_size  # DEBUG
         # Initialize the first line of vcf file, start from position 1
 
-        if self.infile_type == self.VCF:
+        if self.infile_type != self.GVCF:
             line_split = self.line.strip().split("\t")
             self.chrom = line_split [0] 
             self.variant = ""
@@ -80,11 +80,11 @@ class something2seg:
             self.line_index += 1
             self.seg_len = self.next_position - self.variant_pos
             self.seg_status = "T"
-            current_line = `self.variant_pos`      + "\t" + \
-                           `self.seg_len`  + "\t" + \
-                           self.seg_status + "\t" + \
+            current_line = `self.variant_pos` + "\t" + \
+                           `self.seg_len`     + "\t" + \
+                           self.seg_status    + "\t" + \
                            self.genetic_break + "\t" + \
-                           self.chrom      + "\t" + \
+                           self.chrom         + "\t" + \
                            self.variant + "\n"
             self.outfile.write ( current_line )
         while self.line_index < self.infile_size:
@@ -126,11 +126,11 @@ class something2seg:
             self.find_next_position()
             self.seg_len = self.next_position - self.variant_pos
             self.seg_status = "T"
-            current_line = `self.variant_pos`      + "\t" + \
-                           `self.seg_len`  + "\t" + \
-                           self.seg_status + "\t" + \
+            current_line = `self.variant_pos` + "\t" + \
+                           `self.seg_len`     + "\t" + \
+                           self.seg_status    + "\t" + \
                            self.genetic_break + "\t" + \
-                           self.chrom      + "\t" + \
+                           self.chrom         + "\t" + \
                            self.variant + "\n"
             self.outfile.write ( current_line )
             self.variant = self.variant
