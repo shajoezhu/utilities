@@ -21,7 +21,7 @@ class inputs:
             self.filetype = self.VCF
             self.outfile_name = self.infile_name.replace(".vcf", ".seg")
         else: print "File type can not be determined, suffix ends with '.vcf', '.gvcf' or '.rgvcf'."
-        print self.outfile_name, self.filetype # DEBUG
+        #print self.outfile_name, self.filetype # DEBUG
                 
     def __init__(self, argv):
         [self.VCF, self.GVCF, self.RGVCF] = range ( 3 ) # enum vcf, gvcf rgvcf 
@@ -108,7 +108,7 @@ class something2seg:
                 self.taxa = 2 * ( len(line_split) - 9 ) # where ( len(line_split) - 9 ) computes the number of the samples
             else:
                 break; # stops at the first line
-        print "number of sample is ",self.taxa # DEBUG
+        #print "number of sample is ",self.taxa # DEBUG
 
     def extract_infile_line( self, line ):
         line_split = line.strip().split("\t")
