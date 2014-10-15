@@ -63,18 +63,18 @@ class something2seg:
             
     def core(self):
         self.pre_process();
-        self.outfile = open ( self.outfile_name, 'w' ) 
-        
+        self.outfile = open ( self.outfile_name, 'w' )         
         self.infile_size = len ( self.infile_Lines )
         #print self.line_index, infile_size  # DEBUG
-        # Initialize the first line of vcf file, start from position 1
 
-        if self.infile_type != self.GVCF:
-            line_split = self.line.strip().split("\t")
-            self.chrom = line_split [0] 
-            self.variant = ""
-            for field in range( 9, len(line_split)):                        
-                self.variant += ".."
+        line_split = self.line.strip().split("\t")
+        self.chrom = line_split [0] 
+
+        self.missingvariant = ""
+        for field in range( 9, len(line_split)):                        
+            self.missingvariant += ".."
+        # Initialize the first line of vcf file, start from position 1            
+        if self.infile_type != self.VCF:
             self.line_index -= 1
             self.find_next_position ()
             self.line_index += 1
@@ -85,7 +85,8 @@ class something2seg:
                            self.seg_status    + "\t" + \
                            self.genetic_break + "\t" + \
                            self.chrom         + "\t" + \
-                           self.variant + "\n"
+                           self.missingvariant + "\n"
+        
             self.outfile.write ( current_line )
         while self.line_index < self.infile_size:
             self.extract_infile_line ( self.infile_Lines [self.line_index] )
@@ -113,8 +114,19 @@ class something2seg:
         line_split = line.strip().split("\t")
         self.chrom = line_split [0] 
         self.variant_pos = int(line_split [1])
+        
+        self.variant_entry = ( line_split[6].find("REFCALL") < 0 )
+        if self.variant_entry:
+            self.seg_end = self.variant_pos
+        else: 
+            field = line_split[7]
+            END_index = field.find ("END=")
+            field = field.strip(field[0:END_index]).strip("END=")
+            semi_col_index = field.find (";")    
+            self.seg_end = int(field[0:semi_col_index])
+
         self.variant = ""
-        for field in range( 9, len(line_split)):                        
+        for field in range( 9, len(line_split) ):
             current_field = line_split[field]
             #print current_field[0], current_field[2] # DEBUG
             self.variant += current_field[0] if ( current_field[0] == "." or current_field[0] == "0") else `1`
@@ -122,25 +134,44 @@ class something2seg:
         #print self.variant # DEBUG
         
     def write_seg_line (self):
-        if  self.infile_type == self.VCF:
-            self.find_next_position()
+        self.find_next_position()
+        if self.variant_entry:
+            # for vcf file, no missing data is represented. Sequence segment between two variants reads are treated as Invariant.
             self.seg_len = self.next_position - self.variant_pos
-            self.seg_status = "T"
-            current_line = `self.variant_pos` + "\t" + \
+            self.seg_status = "T" 
+            variant_line = `self.variant_pos` + "\t" + \
                            `self.seg_len`     + "\t" + \
-                           self.seg_status    + "\t" + \
-                           self.genetic_break + "\t" + \
-                           self.chrom         + "\t" + \
-                           self.variant + "\n"
-            self.outfile.write ( current_line )
-            self.variant = self.variant
-            self.pos = self.variant_pos
+                           "T" + "\t" + self.genetic_break + "\t" + self.chrom + "\t" + self.variant + "\n"
+            self.outfile.write ( variant_line )
         elif self.infile_type == self.GVCF:
-            pass
-        else:
-            pass
-            
-            
+            self.seg_len = self.seg_end - self.variant_pos + 1
+            invariant_line = `self.variant_pos` + "\t" + \
+                             `self.seg_len`     + "\t" + \
+                             "T" + "\t" + self.genetic_break + "\t" + self.chrom + "\t" + self.missingvariant + "\n"
+            self.outfile.write ( invariant_line )
+            self.seg_len = self.next_position - self.seg_end
+            missing_line = `self.variant_pos` + "\t" + \
+                           `self.seg_len`     + "\t" + \
+                           "F" + "\t" + self.genetic_break + "\t" + self.chrom + "\t" + self.missingvariant + "\n"
+            if self.seg_len > 1:
+                self.outfile.write ( missing_line )
+        elif self.infile_type == self.RGVCF:
+            self.seg_len = self.seg_end - self.variant_pos + 1
+            missing_line = `self.variant_pos` + "\t" + \
+                           `self.seg_len`     + "\t" + \
+                           "F" + "\t" + self.genetic_break + "\t" + self.chrom + "\t" + self.missingvariant + "\n"
+            self.outfile.write ( missing_line )
+            self.seg_len = self.next_position - self.seg_end
+            invariant_line = `self.variant_pos` + "\t" + \
+                             `self.seg_len`     + "\t" + \
+                             "T" + "\t" + self.genetic_break + "\t" + self.chrom + "\t" + self.missingvariant + "\n"
+            if self.seg_len > 1:
+                self.outfile.write ( invariant_line )
+        else: 
+            print "ERROR"
+            sys.exit()
+                            
+                            
 def print_usage():
     print "USAGE:"
     print "    ./vcf2seg -i FILENAME -seqlen INT"

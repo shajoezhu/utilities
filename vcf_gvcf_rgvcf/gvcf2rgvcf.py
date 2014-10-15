@@ -7,8 +7,6 @@ def convert_gvcf_to_rgvcf_line ( tmp_line, next_base_ ):
     line_split = tmp_line.split()
     seg_start = int(line_split[1])
     END_index = line_split[7].find ("END=")
-    
-    
     tmp_info_field = line_split[7].strip(line_split[7][0:END_index]).strip("END=")
     semi_col_index = tmp_info_field.find (";")    
     seg_end = int(tmp_info_field[0:semi_col_index])
