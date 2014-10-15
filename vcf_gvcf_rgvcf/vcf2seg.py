@@ -8,6 +8,7 @@ class inputs:
         self.argi += 1
         if self.argi == self.argc:
             print "Missing argument after flag: " + self.argv[self.argi-1]
+            print_usage()
             sys.exit()
                 
     def choose_suffix(self):
@@ -34,6 +35,7 @@ class inputs:
                 self.infile_name = self.argv[ self.argi ]
                 if not (os.path.isfile( self.infile_name) and os.access( self.infile_name, os.R_OK ) ):
                     print "Invalid file: ", self.infile_name
+                    print_usage()
                 else:
                     self.choose_suffix();
             elif self.argv[self.argi] == "-seqlen":
@@ -186,5 +188,5 @@ if __name__ == "__main__":
         print_usage()
     
     myinput = inputs( sys.argv )
-    myprocess = something2seg(myinput.filetype, myinput.infile_name, myinput.outfile_name, myinput.seqlen)    
+    myprocess = something2seg(myinput.filetype, myinput.infile_name, myinput.outfile_name, myinput.seqlen)
     myprocess.core()
