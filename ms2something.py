@@ -274,8 +274,8 @@ def generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa, missing_d
         pass
     
     """
-
-    sefement_file = open( segment_prefix_in + ".seg", 'w' )
+    segfile_name = segment_prefix_in + ("missing" if missing_data else "") + ".seg"
+    sefement_file = open( segfile_name, 'w' )
     num_seg = len( position )
     position.append( float(seqlen) )
     num_homozygous = int(round( position[0] - 1 ))
