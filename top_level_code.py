@@ -154,7 +154,7 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
     top_param.ith_run = ith_call
     #top_time = ms_param.topTime() # Note in pfARG, mutation, recombination and branch length are all scaled by 4N0
     top_time = ms_param.topTime2N0() # to make the top time interval consistent with psmc and diCal
-    pfARG = "pf-ARG"    
+    pfARG = "smcsmc"    
     #pfARG = "../../src/pf-ARG_dbg"
     
     sub = "_NA1" if top_param.sub else ""
