@@ -517,7 +517,7 @@ if __name__ == "__main__":
         To_msmc ( sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5] )
         
     elif sys.argv[1] == "seg":
-        To_segment (seqlen_in = sys.argv[2], 
+        To_seg (seqlen_in = sys.argv[2], 
                      position_file_name_in = sys.argv[3], 
                      seg_file_name_in = sys.argv[4], 
                      segment_prefix_in = sys.argv[5] )
