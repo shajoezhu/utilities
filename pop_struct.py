@@ -421,25 +421,21 @@ class ms_param_of_case :
                      `int(self.seqlen)`    + __space__ + \
                      "-T"                  + __space__                      
 
+        ms_command += "-p 10" + __space__
+
         for i in range(len(self.Time)):
             #if (length(ms_param$Time)==1) {break;} # assume that at time zero, all the population structure have size N_0 = scaling_N0
             ms_command += "-eN" + __space__ + `self.Time[i]` + __space__ + `self.pop[i]` + __space__ 
     
         if self.fixed_seed: 
-            #ms_command += "-seed " + __space__ + self.ms_seed(ith_run) + __space__
             ms_command += "-seed " + __space__ + `ith_run` + __space__ + `ith_run` + __space__ + `ith_run` + __space__
             
-        if method == "ms":
-            ms_command += "-p 10" + __space__
-            
         if ( self.seqlen > 10**9 ):
-            ms_command += "-l 100000" + __space__
+            ms_command += "-l 300000" + __space__
             
         ms_command += ">" + __space__ + self.ms_out_file_prefix         
         print ms_command        
         self.ms_command = ms_command
-        
-        
         
     def ms_seed(self, python_seed):
         """
