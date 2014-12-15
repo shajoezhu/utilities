@@ -80,7 +80,8 @@ class ms_param_of_case :
         self.fixed_seed = False
         if self.case == "sim-0":
     #       -t 81960 -r 13560 30000000 -eN 0.01 0.05 -eN 0.0375 0.5 -eN 1.25 1
-            self.scaling_N0 = 10**4
+    # from the paper, mu is used 2.5e-8
+            self.scaling_N0 = 27320
             self.seqlen           = 3*10**7
             self.t                = 0.002732 * self.seqlen
             self.r                = self.seqlen * 0.000452
@@ -89,7 +90,8 @@ class ms_param_of_case :
 
         elif self.case == "sim-1":
     #       -t 30000 -r 6000 30000000 -eN 0.01 0.1 -eN 0.06 1 -eN 0.2 0.5 -eN 1 1 -eN 2 2
-            self.scaling_N0 = 10**4
+    # from the paper, mu is used 2.5e-8
+            self.scaling_N0 = 10**4 # = 3e4 / 3e7 / 2.5e-8 / 4
             self.seqlen           = 3*10**7
             self.t                = self.seqlen * 0.001
             self.r                = self.seqlen * 0.0002
@@ -98,7 +100,8 @@ class ms_param_of_case :
          
         elif self.case == "sim-2":
     #       -t 3000 -r 600 30000000 -eN 0.1 5 -eN 0.6 20 -eN 2 5 -eN 10 10 -eN 20 5
-            self.scaling_N0 = 10**3
+    # from the paper, mu is used 2.5e-8
+            self.scaling_N0 = 10**3  # 3e3 / 3e7 / 2.5e-8 / 4
             self.seqlen           = 3*10**7
             self.t                = self.seqlen * 0.0001
             self.r                = self.seqlen * 2e-5
@@ -107,7 +110,8 @@ class ms_param_of_case :
          
         elif self.case == "sim-3":
     #       -t 60000 -r 12000 30000000 -eN 0.01 0.05 -eN 0.0150 0.5 -eN 0.05 0.25 -eN 0.5 0.5
-            self.scaling_N0 = 2 * 10**4
+    # from the paper, mu is used 2.5e-8
+            self.scaling_N0 = 2 * 10**4 #  = 6e4 / 3e7 / 2.5e-8 / 4
             self.seqlen           = 3*10**7
             self.t                = self.seqlen * 0.002
             self.r                = self.seqlen * 0.0004
@@ -115,8 +119,9 @@ class ms_param_of_case :
             self.pop              = [0.05, 0.5, 0.25, 0.5]
          
         elif self.case == "sim-1-modified":
+		# from the paper, mu is used 2.5e-8
     #       -t 30000 -r 6000 30000000 -T -eN 0.05 0.1 -eN 0.07 1 -eN 0.2 0.5 -eN 0.8 1 -eN 1.5 2
-            self.scaling_N0 = 10**4
+            self.scaling_N0 = 10**4 
             self.seqlen           = 3*10**7
             self.t                = self.seqlen * 0.001
             self.r                = self.seqlen * 0.0002
@@ -132,10 +137,10 @@ class ms_param_of_case :
     #-eN 0.3379 0.3103 -eN 0.3988 0.3458 -eN 0.4701 0.4109 -eN 0.5538 0.5048 \
     #-eN 0.6520 0.5996 -eN 0.7671 0.6440 -eN 0.9020 0.6178 -eN 1.0603 0.5345 \
     #-eN 1.4635 1.7931
-    
+    # from the paper, mu is used 2.5e-8
     #        self.t                = 65130.39
     #        self.r                = 10973.82
-            self.scaling_N0 = 2.1*10**4
+            self.scaling_N0 = 2.171013*10**4  # = 65130.39 / 3e7 / 2.5e-8 / 4
             self.seqlen           = 3*10**7
             self.t                = 0.002171013 * self.seqlen
             self.r                = 0.000365794 * self.seqlen
