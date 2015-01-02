@@ -4,7 +4,7 @@ import pylab
 import numpy as np
 import sys,os
 from numpy import sqrt, mean, var, array
-max_iter_ = 40
+max_iter_ = 100
 suffix = sys.argv[1] 
 scaling_N0 = float(sys.argv[2])
 model = sys.argv[3] 
