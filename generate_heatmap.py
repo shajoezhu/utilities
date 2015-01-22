@@ -70,26 +70,26 @@ def psmc_figure(cum_change, tmrca, position, prefix):
     
 
 ## @ingroup group_compare_pfarg            
-def read_pfARG_data( file_name ):
-    pfARG_data = []
+def read_smcsmc_data( file_name ):
+    smcsmc_data = []
     base = []
 
-    #pfARG_data_file = open(file_name, "r")    
-    #for line in pfARG_data_file:
+    #smcsmc_data_file = open(file_name, "r")    
+    #for line in smcsmc_data_file:
         #dummy = [float(x) for x in line.split("\t")]
         #print dummy
         #base.append(dummy.pop(0))
-        #pfARG_data.append(dummy)        
-    #pfARG_data_file.close()
+        #smcsmc_data.append(dummy)        
+    #smcsmc_data_file.close()
 
     with open(file_name, 'rb') as csvfile:
         spamreader = csv.reader(csvfile, delimiter='\t')
         for row in spamreader:
             dummy = [float(x) for x in row]
             base.append(dummy.pop(0))
-            pfARG_data.append(dummy)
+            smcsmc_data.append(dummy)
     
-    return pfARG_data, base
+    return smcsmc_data, base
 
 
 ## @ingroup group_compare_pfarg            
@@ -132,9 +132,9 @@ def makeHeatmatrix(x, y, WEIGHT, TMRCA):
 
 
 ## @ingroup group_compare_pfarg            
-def pfARG_XYZ( prefix ):
-    WEIGHT, x = read_pfARG_data( prefix + "WEIGHT" )
-    TMRCA, x  = read_pfARG_data( prefix + "TMRCA" )
+def smcsmc_XYZ( prefix ):
+    WEIGHT, x = read_smcsmc_data( prefix + "WEIGHT" )
+    TMRCA, x  = read_smcsmc_data( prefix + "TMRCA" )
     #default_pop_size = 10000
     #TMRCA_max = 10 * default_pop_size
     TMRCA_max = 2 + shifting
@@ -146,8 +146,8 @@ def pfARG_XYZ( prefix ):
 
 
 ## @ingroup group_compare_pfarg            
-def pfARG_figure(cum_change, tmrca, position, prefix):
-    X, Y, Z, site, time = pfARG_XYZ( prefix )
+def smcsmc_figure(cum_change, tmrca, position, prefix):
+    X, Y, Z, site, time = smcsmc_XYZ( prefix )
     fig = pl.figure(figsize=(24,7)) 
     pl.pcolor(X, Y, Z, vmin=0, vmax=0.15)
     my_axes = fig.gca()
@@ -167,7 +167,7 @@ def pfARG_figure(cum_change, tmrca, position, prefix):
     pl.xlabel("Sequence base", fontsize=20)
     #pl.ylabel("TMRCA (generation)")
     pl.ylabel("TMRCA (4N0)", fontsize=20)
-    pl.savefig( prefix + "pfARG_heat" + ".png", transparent=True)
+    pl.savefig( prefix + "smcsmc_heat" + ".png", transparent=True)
     pl.close()
 
 
@@ -237,26 +237,26 @@ def diCal_lines (arg1, arg2):
 
 
 ## @ingroup group_compare_pfarg            
-def pfARG_heat (arg1, arg2, subbool = False):
+def smcsmc_heat (arg1, arg2, subbool = False):
     sub = "_NA1" if subbool else ""
     prefix = arg1
     seqlen = int(arg2)
     cum_change = get_cum_change ( prefix + "mschange" )
     tmrca = get_tmrca ( prefix + "tmrca")
     position = ms.get_position ( seqlen, prefix + "position")
-    pfARG_figure(cum_change, tmrca, position, prefix+sub )
+    smcsmc_figure(cum_change, tmrca, position, prefix+sub )
 
 
-def pfARG_survivor_XYZ( prefix ):
-    Z, x = read_pfARG_data( prefix + "SURVIVOR" )
+def smcsmc_survivor_XYZ( prefix ):
+    Z, x = read_smcsmc_data( prefix + "SURVIVOR" )
     numof_y = len(Z[0]); # number of grids on the (y-axis)
     y = range(numof_y)
     Z= np.array(np.transpose(Z))
     X, Y = np.meshgrid( x, y )
     return X, Y, Z, x, y
 
-def pfARG_survivor ( prefix ):
-    X, Y, Z, site, particles = pfARG_survivor_XYZ( prefix )    
+def smcsmc_survivor ( prefix ):
+    X, Y, Z, site, particles = smcsmc_survivor_XYZ( prefix )    
     fig = pl.figure(figsize=(24,7)) 
     pl.pcolor(X, Y, Z)
     my_axes = fig.gca()
@@ -265,7 +265,7 @@ def pfARG_survivor ( prefix ):
     pl.xlabel("Sequence base")
     #pl.ylabel("TMRCA (generation)")
     pl.ylabel("Particles")
-    pl.savefig( prefix + "pfARG_survivor" + ".png")
+    pl.savefig( prefix + "smcsmc_survivor" + ".png")
     pl.close()
 
 
@@ -282,7 +282,7 @@ def psmc_heat (arg1, arg2):
 
 if __name__ == "__main__":
     #try:
-        pfARG_heat (sys.argv[1], sys.argv[2])
+        smcsmc_heat (sys.argv[1], sys.argv[2])
         #psmc_heat  (sys.argv[1], sys.argv[2])
     #except:
         #print "something wrong"

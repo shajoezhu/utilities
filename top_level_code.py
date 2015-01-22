@@ -28,9 +28,9 @@ class program_parameters :
         # method:
         self.psmc  = False
         self.diCal = False
-        self.pfARG = False
+        self.smcsmc = False
         
-        # ms, pfARG, diCal specific
+        # ms, smcsmc, diCal specific
         self.fixed_seed = True        
         
         # diCal specific
@@ -44,7 +44,7 @@ class program_parameters :
         # msmc specific
         self.msmc_pattern = '"10*1+10*2"'
         
-        # pfARG specific
+        # smcsmc specific
         self.Nparticle = 1000
         #self.lag = 2
         self.pruning = 50000
@@ -150,15 +150,15 @@ def diCal_calling ( top_param, ms_param, ith_call ):
     
 
 ## @ingroup group_compare_pfarg
-def pfARG_calling ( top_param, ms_param, ith_call ):
+def smcsmc_calling ( top_param, ms_param, ith_call ):
     top_param.ith_run = ith_call
-    #top_time = ms_param.topTime() # Note in pfARG, mutation, recombination and branch length are all scaled by 4N0
+    #top_time = ms_param.topTime() # Note in smcsmc, mutation, recombination and branch length are all scaled by 4N0
     top_time = ms_param.topTime2N0() # to make the top time interval consistent with psmc and diCal
-    pfARG = "smcsmc"    
-    #pfARG = "../../src/pf-ARG_dbg"
+    smcsmc = "smcsmc"    
+    #smcsmc = "../../src/pf-ARG_dbg"
     
     sub = "_NA1" if top_param.sub else ""
-    pfARG_command = pfARG  + __space__ + \
+    smcsmc_command = smcsmc  + __space__ + \
                     "-nsam" + __space__ + `top_param.nsample` + __space__ + \
                     "-EM"  + __space__ + `top_param.EMsteps` + __space__ + \
                     "-Np"  + __space__ + `top_param.Nparticle` + __space__ + \
@@ -175,22 +175,22 @@ def pfARG_calling ( top_param, ms_param, ith_call ):
     #x=float('nan')
     # x==x is false
     #if top_param.pruning == top_param.pruning:
-        #pfARG_command += "-l" + __space__ + `top_param.pruning` + __space__ # to use smc
+        #smcsmc_command += "-l" + __space__ + `top_param.pruning` + __space__ # to use smc
         #pruneflag = "prune" + self.pruning
 
     if top_param.fixed_seed:
-        pfARG_command += "-seed" + __space__ + `ith_call+1` + __space__ # as ith_call can be zero, and -seed 0 is random
+        smcsmc_command += "-seed" + __space__ + `ith_call+1` + __space__ # as ith_call can be zero, and -seed 0 is random
         
     if top_param.online:
-        pfARG_command += "-online" + __space__
+        smcsmc_command += "-online" + __space__
 
     if top_param.heat:
-        pfARG_command += "-heat" + __space__
+        smcsmc_command += "-heat" + __space__
         
     if top_param.finite:
-        pfARG_command += "-finite" + __space__        
+        smcsmc_command += "-finite" + __space__        
 
-    return pfARG_command
+    return smcsmc_command
 
 
 ## @ingroup group_compare_psmc
@@ -342,23 +342,23 @@ def interpret_msmc(top_param = program_parameters(), scaling_method = "2N0", yea
             
 
 ## @ingroup group_compare_pfarg            
-def interpret_pfARG( top_param = program_parameters(), scaling_method = "2N0", year = 1, ylog10scale = False ):
+def interpret_smcsmc( top_param = program_parameters(), scaling_method = "2N0", year = 1, ylog10scale = False ):
     if top_param.ylog10scale:
         ylog10scale = True
     if scaling_method == "generation":
         scaling_method = "years"
         year = 1
 
-    #pfARG_para = program_parameters()
-    #top_param  = pfARG_para
+    #smcsmc_para = program_parameters()
+    #top_param  = smcsmc_para
     ####### This two lines should be outside, after called
     
     replicates = top_param.replicates
     nsample    = top_param.nsample
     case       = top_param.case
     
-    #dir_name = "pfARG/"+case + "Samples" +`nsample`
-    dir_name = "pfARG" + case + "Samples" +`nsample`
+    #dir_name = "smcsmc/"+case + "Samples" +`nsample`
+    dir_name = "smcsmc" + case + "Samples" +`nsample`
     ms_param = param.ms_param_of_case(case)
     if len(ms_param.Time) == 1: return
     
@@ -566,14 +566,14 @@ def run_psmc ( top_param ):
 
 
 ## @ingroup group_compare_pfarg        
-def run_pfARG ( top_param ):
+def run_smcsmc ( top_param ):
     case       = top_param.case
     replicates = top_param.replicates
     nsample    = top_param.nsample
     
     sub = "_NA1" if top_param.sub else ""
     
-    dir_name = "pfARG" + case + "Samples" +`nsample`
+    dir_name = "smcsmc" + case + "Samples" +`nsample`
     os.system("rm -r " + dir_name)
     os.system("mkdir " + dir_name)
     
@@ -590,15 +590,15 @@ def run_pfARG ( top_param ):
             os.system("ln -s ~/bin/Vcf.pm .")
             os.system("cat " + ms_param.ms_out_file_prefix + ".vcf | vcf-subset -c NA1 > " +  ms_param.ms_out_file_prefix + "_NA1.vcf" )        
         
-        pfARG_commond = pfARG_calling( top_param, ms_param, ith_repeat )
+        smcsmc_commond = smcsmc_calling( top_param, ms_param, ith_repeat )
 
-        print pfARG_commond
-        ms_param.function_call( pfARG_commond )
-        os.system(pfARG_commond)       
+        print smcsmc_commond
+        ms_param.function_call( smcsmc_commond )
+        os.system(smcsmc_commond)       
         
         if top_param.heat:
-            #heat.pfARG_survivor( ms_param.ms_out_file_prefix )
-            heat.pfARG_heat(ms_param.ms_out_file_prefix, `ms_param.seqlen`, top_param.sub)       
+            #heat.smcsmc_survivor( ms_param.ms_out_file_prefix )
+            heat.smcsmc_heat(ms_param.ms_out_file_prefix, `ms_param.seqlen`, top_param.sub)       
             os.system ("mv *.png " + dir_name)
             os.system ("rm " + ms_param.ms_out_file_prefix + "* ")               
             
@@ -627,7 +627,7 @@ def read_param_file ( experiment_name ):
         elif line.split()[0] == "pruning:":    top_param.pruning    = int(line.split()[1])
         elif line.split()[0] == "method:":
             top_param.psmc  = "psmc"  in line.split()
-            top_param.pfARG = "pfARG" in line.split()
+            top_param.smcsmc = "smcsmc" in line.split()
             top_param.diCal = "diCal" in line.split()
     experiment_file.close()
     
@@ -644,9 +644,9 @@ def run_all_simulations( experiment_name , top_param ):
         run_psmc  ( top_param )
         interpret_psmc ( top_param )        
         
-    if top_param.pfARG :     
-        run_pfARG ( top_param )
-        interpret_pfARG ( top_param )
+    if top_param.smcsmc :     
+        run_smcsmc ( top_param )
+        interpret_smcsmc ( top_param )
         
     if top_param.diCal :
         run_diCal ( top_param )

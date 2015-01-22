@@ -11,7 +11,7 @@
 *@ingroup group_compare
 */
 
-/** @defgroup group_compare_pfarg pfARG
+/** @defgroup group_compare_pfarg smcsmc
 *@ingroup group_compare
 */
 

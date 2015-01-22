@@ -1,11 +1,10 @@
-method: smcsmc
-Case: open
-EMsteps: 10
-replicates: 15
+method: smcsmc smcsmcRJCT
+Case: Heat
+EMsteps: 0
+replicates: 10
 nsample: 2
-pattern: 3+2+2+2+2+2+3
 # ms, smcsmc, diCal specific
 fixed_seed: True        
 # smcsmc specific
 Nparticle: 1000
-lag: 2
+heat

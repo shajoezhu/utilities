@@ -510,7 +510,7 @@ class ms_param_of_case :
         #time = self.Time[-1]*2.5 if len(self.Time)>1 else 2 # In case top time is zero
         #return int( round(time + 0.5) ) # round up
         #time = self.Time[-1]*5 if len(self.Time)>1 else 2 # In case top time is zero
-        time = self.Time[-1] if len(self.Time)>1 else 2 # Set the top time to the maximal value defined by the pop structure. To see what result this returns for pfARG.
+        time = self.Time[-1] if len(self.Time)>1 else 2 # Set the top time to the maximal value defined by the pop structure. To see what result this returns for smcsmc.
         return time # round up    
     
     

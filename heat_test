@@ -1,10 +1,10 @@
-method: pfARG psmc
+method: smcsmc psmc
 Case: Heat
 EMsteps: 0
 replicates: 10
 nsample: 2
-# ms, pfARG, diCal specific
+# ms, smcsmc, diCal specific
 fixed_seed: True        
-# pfARG specific
+# smcsmc specific
 Nparticle: 1000
 heat

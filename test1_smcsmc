@@ -1,11 +1,12 @@
-method: pfARG
+method: smcsmc
 Case: diCal-S1
-EMsteps: 20
+EMsteps: 25
 replicates: 15
 nsample: 2
+#pattern: 2+3+2+2+1+1+1+1+2+1
 pattern: 2+3+2+2+2+2+3
-# ms, pfARG, diCal specific
+# ms, smcsmc, diCal specific
 fixed_seed: True        
-# pfARG specific
+# smcsmc specific
 Nparticle: 1000
 lag: 2

@@ -1,13 +1,13 @@
-method: pfARG 
+method: smcsmc 
 Case: Heat
 EMsteps: 0
 replicates: 10
 nsample: 2
 pattern: 5+3
 pruning: 0
-# ms, pfARG, diCal specific
+# ms, smcsmc, diCal specific
 fixed_seed: True        
-# pfARG specific
+# smcsmc specific
 Nparticle: 10000
 lag: 100000
 heat
