@@ -126,7 +126,9 @@ def makeHeatmatrix(x, y, WEIGHT, TMRCA):
         #print z
         for zi in z: zcolsum += zi
         #z = [ (zi / zcolsum)**0.45 for zi in z] # For better presentation
-        z = [ (zi / zcolsum) for zi in z]
+        #print zcolsum
+        if zcolsum > 0:  # DEBUG, check how could zcolsum = 0
+            z = [ (zi / zcolsum) for zi in z]
         Z.append(z)
     return np.asarray(Z).transpose()
 

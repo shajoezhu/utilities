@@ -150,11 +150,10 @@ def diCal_calling ( top_param, ms_param, ith_call ):
     
 
 ## @ingroup group_compare_pfarg
-def smcsmc_calling ( top_param, ms_param, ith_call ):
+def smcsmc_calling ( top_param, ms_param, ith_call, smcsmc = "smcsmc" ):
     top_param.ith_run = ith_call
     #top_time = ms_param.topTime() # Note in smcsmc, mutation, recombination and branch length are all scaled by 4N0
-    top_time = ms_param.topTime2N0() # to make the top time interval consistent with psmc and diCal
-    smcsmc = "smcsmc"    
+    top_time = ms_param.topTime2N0() # to make the top time interval consistent with psmc and diCal    
     #smcsmc = "../../src/pf-ARG_dbg"
     
     sub = "_NA1" if top_param.sub else ""
@@ -566,14 +565,14 @@ def run_psmc ( top_param ):
 
 
 ## @ingroup group_compare_pfarg        
-def run_smcsmc ( top_param ):
+def run_smcsmc ( top_param, smcsmc = "smcsmc" ):
     case       = top_param.case
     replicates = top_param.replicates
     nsample    = top_param.nsample
     
     sub = "_NA1" if top_param.sub else ""
     
-    dir_name = "smcsmc" + case + "Samples" +`nsample`
+    dir_name = smcsmc + case + "Samples" +`nsample`
     os.system("rm -r " + dir_name)
     os.system("mkdir " + dir_name)
     
@@ -583,14 +582,14 @@ def run_smcsmc ( top_param ):
     for ith_repeat in range(replicates):
         ms_param.simulate(nsam = nsample, num_loci = 1, ith_run = ith_repeat)
         
-        ms.To_vcf(ms_param.seqlen, ms_param.position_file, ms_param.seg_file, ms_param.ms_out_file_prefix, "vcf", python_seed = top_param.fixed_seed*ith_repeat)        
+        #ms.To_vcf(ms_param.seqlen, ms_param.position_file, ms_param.seg_file, ms_param.ms_out_file_prefix, "vcf", python_seed = top_param.fixed_seed*ith_repeat)        
         ms.To_seg(ms_param.seqlen, ms_param.position_file, ms_param.seg_file, ms_param.ms_out_file_prefix)        
             #To_vcf( seqlen_in, position_file_name_in, seg_file_name_in, vcf_prefix_in, file_type_in, python_seed = 0 ):        
         if ( top_param.sub ):
             os.system("ln -s ~/bin/Vcf.pm .")
             os.system("cat " + ms_param.ms_out_file_prefix + ".vcf | vcf-subset -c NA1 > " +  ms_param.ms_out_file_prefix + "_NA1.vcf" )        
         
-        smcsmc_commond = smcsmc_calling( top_param, ms_param, ith_repeat )
+        smcsmc_commond = smcsmc_calling( top_param, ms_param, ith_repeat, smcsmc )
 
         print smcsmc_commond
         ms_param.function_call( smcsmc_commond )
@@ -628,6 +627,7 @@ def read_param_file ( experiment_name ):
         elif line.split()[0] == "method:":
             top_param.psmc  = "psmc"  in line.split()
             top_param.smcsmc = "smcsmc" in line.split()
+            top_param.smcsmcRJCT = "smcsmcRJCT" in line.split()
             top_param.diCal = "diCal" in line.split()
     experiment_file.close()
     
@@ -644,10 +644,14 @@ def run_all_simulations( experiment_name , top_param ):
         run_psmc  ( top_param )
         interpret_psmc ( top_param )        
         
-    if top_param.smcsmc :     
-        run_smcsmc ( top_param )
+    if top_param.smcsmc :
+        run_smcsmc ( top_param, "smcsmc" )
         interpret_smcsmc ( top_param )
-        
+
+    if top_param.smcsmcRJCT :
+        run_smcsmc ( top_param, "smcsmcRJCT" )
+        interpret_smcsmc ( top_param )
+
     if top_param.diCal :
         run_diCal ( top_param )
         interpret_diCal ( top_param )

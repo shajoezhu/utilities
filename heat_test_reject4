@@ -2,7 +2,7 @@ method: smcsmcRJCT
 Case: Heat
 EMsteps: 0
 replicates: 1
-nsample: 2
+nsample: 4
 # ms, smcsmc, diCal specific
 fixed_seed: True        
 # smcsmc specific

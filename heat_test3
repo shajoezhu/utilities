@@ -1,10 +1,10 @@
-method: smcsmcRJCT
+method: smcsmc
 Case: Heat
 EMsteps: 0
 replicates: 1
-nsample: 2
+nsample: 3
 # ms, smcsmc, diCal specific
 fixed_seed: True        
 # smcsmc specific
-Nparticle: 1000
+Nparticle: 50000
 heat
