@@ -6,5 +6,5 @@ nsample: 3
 # ms, smcsmc, diCal specific
 fixed_seed: True        
 # smcsmc specific
-Nparticle: 50000
+Nparticle: 10000
 heat
