@@ -257,7 +257,7 @@ def To_seg( seqlen_in, position_file_name_in, seg_file_name_in, segment_prefix_i
     generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa, missing_data )
 
 
-def generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa, missing_data = False):
+def generate_seg_variant_at_beginning ( segment_prefix_in, position, seqlen, seg, num_taxa, missing_data = False):
     """
     Generate segment data
     
@@ -298,6 +298,49 @@ def generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa, missing_d
                 #else:
                     #sefement_file.write( `seg[allele][i]` )
             sefement_file.write("\n")
+    sefement_file.close()
+    
+def generate_seg ( segment_prefix_in, position, seqlen, seg, num_taxa, missing_data = False):
+    """
+    Generate segment data
+    
+    Each line consist with
+        Site(Segment start) Segment_length Segment_state genetic_break allelic_state 
+    
+    Args:
+        segment_prefix_in: segment data file prefix
+        position: rescaled mutation position on sequence between 0 and seqlen
+        seg: list of segregating site data
+        num_taxa: number of taxa
+    
+    Returns:
+        pass
+    
+    """
+    segfile_name = segment_prefix_in + ("missing" if missing_data else "") + ".seg"
+    sefement_file = open( segfile_name, 'w' )
+    num_seg = len( position )
+    position.append( float(seqlen) )
+    num_homozygous = int(round( position[0] - 1 ))
+    seg_state = "F" if missing_data else "T"
+    line = `int(1)` + "\t" + `num_homozygous` + "\t" + seg_state + "\t" + "F\t1\t"
+    sefement_file.write(line)
+    for i in range( num_seg ):
+        for allele in range( num_taxa ):
+            seg_contant = "." if missing_data else `seg[allele][i]`
+            sefement_file.write( seg_contant )
+            #if missing_data: 
+                #sefement_file.write( "." )
+            #else:
+                #sefement_file.write( `seg[allele][i]` )
+        sefement_file.write("\n")
+        num_homozygous = int(round( position[i+1] - position[i] ))
+        if num_homozygous > 0 :
+            line = `int(position[i])` + "\t" + `num_homozygous` + "\t" + seg_state + "\t" + "F\t1\t"
+            sefement_file.write(line)
+    for allele in range( num_taxa ):
+        sefement_file.write( "." ) # let 2 denote missing, easier to read in 
+    sefement_file.write("\n")
     sefement_file.close()
 
 ## @ingroup group_compare_pfarg            
