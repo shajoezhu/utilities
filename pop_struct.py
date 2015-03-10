@@ -20,7 +20,7 @@ __space__ = " "
 
 class ms_param_of_case :
     
-    def post_init_process_seqlen (self, seqlen = ""):
+    def post_init_process_seqlen (self, seqlen = "" ):
         """
         if seqlen == long, over write the default the seqlen to 3 * 10**7
         elif seqlen == median, over wirte the default seqlen to 10**6
@@ -57,7 +57,7 @@ class ms_param_of_case :
         elif mut_ratio == "equal":   self.t = self.r 
         
     
-    def __init__(self, case, seqlen = "", mut_ratio = ""):
+    def __init__(self, case, nsam, seqlen = "", mut_ratio = ""):
         """        
         define ms cases and parameters
         Note that 4N0 * mu = t/L
@@ -78,6 +78,7 @@ class ms_param_of_case :
         """           
         self.case = case
         self.fixed_seed = False
+        self.migration_cmd = None
         if self.case == "sim-0":
     #       -t 81960 -r 13560 30000000 -eN 0.01 0.05 -eN 0.0375 0.5 -eN 1.25 1
     # from the paper, mu is used 2.5e-8
@@ -97,6 +98,17 @@ class ms_param_of_case :
             self.r                = self.seqlen * 0.0002
             self.Time             = [.01, 0.06, 0.2, 1, 2]
             self.pop              = [0.1, 1, 0.5, 1, 2]
+
+        elif self.case == "sim-1-migration":
+    #       -t 30000 -r 6000 30000000 -I 2 <nsam/2> <nsam/2> 0.0 -eN 0.01 0.1 -eN 0.06 1 -eN 0.2 0.5 -ej 0.6 2 1 -eN 1 1 -eN 2 2
+    # from the paper, mu is used 2.5e-8
+            self.scaling_N0 = 10**4 # = 3e4 / 3e7 / 2.5e-8 / 4
+            self.seqlen           = 3*10**7
+            self.t                = self.seqlen * 0.001
+            self.r                = self.seqlen * 0.0002
+            self.migration_cmd    = " -I 2 " + str(int(nsam/2)) + " " + str(int(nsam/2)) + " 0.0"
+            self.Time             = [.01, 0.06, 0.2, 0.6, 1, 2]
+            self.pop              = [0.1, 1, 0.5, "-ej %s 2 1", 1, 2]
          
         elif self.case == "sim-2":
     #       -t 3000 -r 600 30000000 -eN 0.1 5 -eN 0.6 20 -eN 2 5 -eN 10 10 -eN 20 5
@@ -329,6 +341,10 @@ class ms_param_of_case :
         """
         time = self.Time
         pop  = self.pop
+        for i in range(1,len(self.pop)):
+            if type(pop[i]) == type(""):
+                # ignore migration commands, and replace by (unchanged) pop size
+                pop[i] = pop[i-1]
         
         if time[0] != 0 :
             time.insert(0, float(0))
@@ -428,9 +444,16 @@ class ms_param_of_case :
 
         ms_command += "-p 10" + __space__
 
+        if self.migration_cmd:
+            ms_command += self.migration_cmd + __space__
+
         for i in range(len(self.Time)):
             #if (length(ms_param$Time)==1) {break;} # assume that at time zero, all the population structure have size N_0 = scaling_N0
-            ms_command += "-eN" + __space__ + `self.Time[i]` + __space__ + `self.pop[i]` + __space__ 
+            if type(self.pop[i]) == type(""):
+                ms_command += (self.pop[i] % self.Time[i]) + __space__
+            else:
+                # common case
+                ms_command += "-eN" + __space__ + `self.Time[i]` + __space__ + `self.pop[i]` + __space__ 
     
         if self.fixed_seed: 
             ms_command += "-seed " + __space__ + `ith_run` + __space__ + `ith_run` + __space__ + `ith_run` + __space__
@@ -533,7 +556,7 @@ if __name__ == "__main__":
     _ith_run = int(sys.argv[3])
     
     #print _case, _nsam, _ith_run
-    _param = ms_param_of_case( _case )
+    _param = ms_param_of_case( _case, _nsam )
     _param.fixed_seed = True
     _param.printing() 
     
