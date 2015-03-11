@@ -37,7 +37,9 @@ class ms_param_of_case :
         elif seqlen == "median":  self.seqlen =     10**6
         elif seqlen == "short":   self.seqlen = 5 * 10**5
         elif seqlen == "whole-genome":      self.seqlen = 3 * 10**9
-        else : return
+        else:
+            # numerical
+            self.seqlen = seqlen
         self.t = self.t * float(self.seqlen)
         self.r = self.r * float(self.seqlen)
         
