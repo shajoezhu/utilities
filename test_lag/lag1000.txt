@@ -1,0 +1,1010 @@
+scrm 2 1 -t 8000.000000 -r 800.000000 20000000  -eN 0.000000 1 -eN 0.009672 1 -eN 0.025538 1 -eN 0.045624 1 -eN 0.071050 1 -eN 0.103238 1 -eN 0.143983 1 -eN 0.195563 1 -eN 0.260858 1 -eN 0.343515 1 -eN 0.448150 1 -eN 0.580607 1 -eN 0.748285 1 -eN 0.960548 1 -eN 1.229251 1 -eN 1.569403 1 -eN 2.000000 1
+Indirectly called
+EM step 0
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 9.88811e-10(15.2992 / 1.54723e+10)
+ popsize is equal to 15770.1 ( 6282.51 / 0.199191/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      15770.1 (    0.199191)
+Updated Ne at time   386.88 :  |        10000 (       5e-05)
+Updated Ne at time  1021.52 :  |        10000 (       5e-05)
+Updated Ne at time  1824.96 :  |        10000 (       5e-05)
+Updated Ne at time     2842 :  |        10000 (       5e-05)
+Updated Ne at time  4129.52 :  |        10000 (       5e-05)
+Updated Ne at time  5759.32 :  |        10000 (       5e-05)
+Updated Ne at time  7822.52 :  |        10000 (       5e-05)
+Updated Ne at time  10434.3 :  |        10000 (       5e-05)
+Updated Ne at time  13740.6 :  |        10000 (       5e-05)
+Updated Ne at time    17926 :  |        10000 (       5e-05)
+Updated Ne at time  23224.3 :  |        10000 (       5e-05)
+Updated Ne at time  29931.4 :  |        10000 (       5e-05)
+Updated Ne at time  38421.9 :  |        10000 (       5e-05)
+Updated Ne at time    49170 :  |        10000 (       5e-05)
+Updated Ne at time  62776.1 :  |        10000 (       5e-05)
+Updated Ne at time    80000 :  |        10000 (       5e-05)
+Forest state was created 35551 times
+Forest state destructor was called 35451 times
+Actual recombination 80683
+Actual recomb op is 0
+End of EM_step 0
+EM step 1
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 9.51099e-10(14.7175 / 1.54742e+10)
+ popsize is equal to 23830.9 ( 6235.28 / 0.130823/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ popsize is equal to 15770.1 ( 1 / 3.17057e-05/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      23830.9 (    0.130823)
+Updated Ne at time   386.88 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  1021.52 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  1824.96 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time     2842 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  4129.52 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  5759.32 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  7822.52 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  10434.3 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  13740.6 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time    17926 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  23224.3 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  29931.4 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  38421.9 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time    49170 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time  62776.1 :  |      15770.1 ( 3.17057e-05)
+Updated Ne at time    80000 :  |      15770.1 ( 3.17057e-05)
+Forest state was created 68521 times
+Forest state destructor was called 68421 times
+Actual recombination 75837
+Actual recomb op is 0
+End of EM_step 1
+EM step 2
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 8.81964e-10(13.6391 / 1.54644e+10)
+ popsize is equal to 13337.5 ( 4604.05 / 0.172597/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ popsize is equal to 23830.9 ( 1 / 2.09812e-05/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      13337.5 (    0.172597)
+Updated Ne at time   386.88 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  1021.52 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  1824.96 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time     2842 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  4129.52 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  5759.32 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  7822.52 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  10434.3 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  13740.6 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time    17926 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  23224.3 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  29931.4 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  38421.9 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time    49170 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time  62776.1 :  |      23830.9 ( 2.09812e-05)
+Updated Ne at time    80000 :  |      23830.9 ( 2.09812e-05)
+Forest state was created 105969 times
+Forest state destructor was called 105869 times
+Actual recombination 92046
+Actual recomb op is 0
+End of EM_step 2
+EM step 3
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.38506e-09(21.433 / 1.54744e+10)
+ popsize is equal to 16577.9 ( 5996.65 / 0.180863/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ popsize is equal to 13337.5 ( 1 / 3.74882e-05/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      16577.9 (    0.180863)
+Updated Ne at time   386.88 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  1021.52 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  1824.96 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time     2842 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  4129.52 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  5759.32 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  7822.52 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  10434.3 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  13740.6 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time    17926 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  23224.3 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  29931.4 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  38421.9 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time    49170 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time  62776.1 :  |      13337.5 ( 3.74882e-05)
+Updated Ne at time    80000 :  |      13337.5 ( 3.74882e-05)
+Forest state was created 149571 times
+Forest state destructor was called 149471 times
+Actual recombination 112356
+Actual recomb op is 0
+End of EM_step 3
+EM step 4
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.36458e-09(20.9853 / 1.53785e+10)
+ popsize is equal to 3455.34 ( 8794.79 / 1.27264/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ popsize is equal to 16577.9 ( 1 / 3.01606e-05/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      3455.34 (     1.27264)
+Updated Ne at time   386.88 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  1021.52 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  1824.96 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time     2842 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  4129.52 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  5759.32 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  7822.52 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  10434.3 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  13740.6 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time    17926 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  23224.3 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  29931.4 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  38421.9 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time    49170 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time  62776.1 :  |      16577.9 ( 3.01606e-05)
+Updated Ne at time    80000 :  |      16577.9 ( 3.01606e-05)
+Forest state was created 192733 times
+Forest state destructor was called 192633 times
+Actual recombination 130495
+Actual recomb op is 0
+End of EM_step 4
+EM step 5
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 7.327e-10(4.77603 / 6.5184e+09)
+ popsize is equal to 736.67 ( 1769.95 / 1.20132/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ popsize is equal to 3455.34 ( 1 / 0.000144703/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |       736.67 (     1.20132)
+Updated Ne at time   386.88 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  1021.52 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  1824.96 :  |      3455.34 ( 0.000144703)
+Updated Ne at time     2842 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  4129.52 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  5759.32 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  7822.52 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  10434.3 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  13740.6 :  |      3455.34 ( 0.000144703)
+Updated Ne at time    17926 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  23224.3 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  29931.4 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  38421.9 :  |      3455.34 ( 0.000144703)
+Updated Ne at time    49170 :  |      3455.34 ( 0.000144703)
+Updated Ne at time  62776.1 :  |      3455.34 ( 0.000144703)
+Updated Ne at time    80000 :  |      3455.34 ( 0.000144703)
+Forest state was created 201849 times
+Forest state destructor was called 201749 times
+Actual recombination 34703
+Actual recomb op is 0
+End of EM_step 5
+EM step 6
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 4.34815e-10(6.71733 / 1.54487e+10)
+ popsize is equal to 935.436 ( 3313.63 / 1.77117/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ popsize is equal to 736.67 ( 1 / 0.00067873/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      935.436 (     1.77117)
+Updated Ne at time   386.88 :  |       736.67 (  0.00067873)
+Updated Ne at time  1021.52 :  |       736.67 (  0.00067873)
+Updated Ne at time  1824.96 :  |       736.67 (  0.00067873)
+Updated Ne at time     2842 :  |       736.67 (  0.00067873)
+Updated Ne at time  4129.52 :  |       736.67 (  0.00067873)
+Updated Ne at time  5759.32 :  |       736.67 (  0.00067873)
+Updated Ne at time  7822.52 :  |       736.67 (  0.00067873)
+Updated Ne at time  10434.3 :  |       736.67 (  0.00067873)
+Updated Ne at time  13740.6 :  |       736.67 (  0.00067873)
+Updated Ne at time    17926 :  |       736.67 (  0.00067873)
+Updated Ne at time  23224.3 :  |       736.67 (  0.00067873)
+Updated Ne at time  29931.4 :  |       736.67 (  0.00067873)
+Updated Ne at time  38421.9 :  |       736.67 (  0.00067873)
+Updated Ne at time    49170 :  |       736.67 (  0.00067873)
+Updated Ne at time  62776.1 :  |       736.67 (  0.00067873)
+Updated Ne at time    80000 :  |       736.67 (  0.00067873)
+Forest state was created 225441 times
+Forest state destructor was called 225341 times
+Actual recombination 34912
+Actual recomb op is 0
+End of EM_step 6
+EM step 7
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 2.08434e-10(3.12235 / 1.49801e+10)
+ popsize is equal to 634.664 ( 2572.03 / 2.02629/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ popsize is equal to 935.436 ( 1 / 0.00053451/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      634.664 (     2.02629)
+Updated Ne at time   386.88 :  |      935.436 (  0.00053451)
+Updated Ne at time  1021.52 :  |      935.436 (  0.00053451)
+Updated Ne at time  1824.96 :  |      935.436 (  0.00053451)
+Updated Ne at time     2842 :  |      935.436 (  0.00053451)
+Updated Ne at time  4129.52 :  |      935.436 (  0.00053451)
+Updated Ne at time  5759.32 :  |      935.436 (  0.00053451)
+Updated Ne at time  7822.52 :  |      935.436 (  0.00053451)
+Updated Ne at time  10434.3 :  |      935.436 (  0.00053451)
+Updated Ne at time  13740.6 :  |      935.436 (  0.00053451)
+Updated Ne at time    17926 :  |      935.436 (  0.00053451)
+Updated Ne at time  23224.3 :  |      935.436 (  0.00053451)
+Updated Ne at time  29931.4 :  |      935.436 (  0.00053451)
+Updated Ne at time  38421.9 :  |      935.436 (  0.00053451)
+Updated Ne at time    49170 :  |      935.436 (  0.00053451)
+Updated Ne at time  62776.1 :  |      935.436 (  0.00053451)
+Updated Ne at time    80000 :  |      935.436 (  0.00053451)
+Forest state was created 238360 times
+Forest state destructor was called 238260 times
+Actual recombination 11507
+Actual recomb op is 0
+End of EM_step 7
+EM step 8
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.14362e-10(1.76965 / 1.5474e+10)
+ popsize is equal to 1141.92 ( 812.419 / 0.355723/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ popsize is equal to 634.664 ( 1 / 0.000787819/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      1141.92 (    0.355723)
+Updated Ne at time   386.88 :  |      634.664 ( 0.000787819)
+Updated Ne at time  1021.52 :  |      634.664 ( 0.000787819)
+Updated Ne at time  1824.96 :  |      634.664 ( 0.000787819)
+Updated Ne at time     2842 :  |      634.664 ( 0.000787819)
+Updated Ne at time  4129.52 :  |      634.664 ( 0.000787819)
+Updated Ne at time  5759.32 :  |      634.664 ( 0.000787819)
+Updated Ne at time  7822.52 :  |      634.664 ( 0.000787819)
+Updated Ne at time  10434.3 :  |      634.664 ( 0.000787819)
+Updated Ne at time  13740.6 :  |      634.664 ( 0.000787819)
+Updated Ne at time    17926 :  |      634.664 ( 0.000787819)
+Updated Ne at time  23224.3 :  |      634.664 ( 0.000787819)
+Updated Ne at time  29931.4 :  |      634.664 ( 0.000787819)
+Updated Ne at time  38421.9 :  |      634.664 ( 0.000787819)
+Updated Ne at time    49170 :  |      634.664 ( 0.000787819)
+Updated Ne at time  62776.1 :  |      634.664 ( 0.000787819)
+Updated Ne at time    80000 :  |      634.664 ( 0.000787819)
+Forest state was created 245671 times
+Forest state destructor was called 245571 times
+Actual recombination 4188
+Actual recomb op is 0
+End of EM_step 8
+EM step 9
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 6.78273e-13(0.00601027 / 8.86113e+09)
+ popsize is equal to 342.006 ( 711.669 / 1.04043/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ popsize is equal to 1141.92 ( 1 / 0.000437857/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      342.006 (     1.04043)
+Updated Ne at time   386.88 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  1021.52 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  1824.96 :  |      1141.92 ( 0.000437857)
+Updated Ne at time     2842 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  4129.52 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  5759.32 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  7822.52 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  10434.3 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  13740.6 :  |      1141.92 ( 0.000437857)
+Updated Ne at time    17926 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  23224.3 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  29931.4 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  38421.9 :  |      1141.92 ( 0.000437857)
+Updated Ne at time    49170 :  |      1141.92 ( 0.000437857)
+Updated Ne at time  62776.1 :  |      1141.92 ( 0.000437857)
+Updated Ne at time    80000 :  |      1141.92 ( 0.000437857)
+Forest state was created 247050 times
+Forest state destructor was called 246950 times
+Actual recombination 565
+Actual recomb op is 0
+End of EM_step 9
+EM step 10
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.09858e-18(1.7e-08 / 1.54745e+10)
+ popsize is equal to 2337.79 ( 375.594 / 0.0803308/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ popsize is equal to 342.006 ( 1 / 0.00146196/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      2337.79 (   0.0803308)
+Updated Ne at time   386.88 :  |      342.006 (  0.00146196)
+Updated Ne at time  1021.52 :  |      342.006 (  0.00146196)
+Updated Ne at time  1824.96 :  |      342.006 (  0.00146196)
+Updated Ne at time     2842 :  |      342.006 (  0.00146196)
+Updated Ne at time  4129.52 :  |      342.006 (  0.00146196)
+Updated Ne at time  5759.32 :  |      342.006 (  0.00146196)
+Updated Ne at time  7822.52 :  |      342.006 (  0.00146196)
+Updated Ne at time  10434.3 :  |      342.006 (  0.00146196)
+Updated Ne at time  13740.6 :  |      342.006 (  0.00146196)
+Updated Ne at time    17926 :  |      342.006 (  0.00146196)
+Updated Ne at time  23224.3 :  |      342.006 (  0.00146196)
+Updated Ne at time  29931.4 :  |      342.006 (  0.00146196)
+Updated Ne at time  38421.9 :  |      342.006 (  0.00146196)
+Updated Ne at time    49170 :  |      342.006 (  0.00146196)
+Updated Ne at time  62776.1 :  |      342.006 (  0.00146196)
+Updated Ne at time    80000 :  |      342.006 (  0.00146196)
+Forest state was created 247376 times
+Forest state destructor was called 247276 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 10
+EM step 11
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.09854e-18(1.7e-08 / 1.54751e+10)
+ popsize is equal to 10256 ( 385.864 / 0.0188116/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ popsize is equal to 2337.79 ( 1 / 0.000213877/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |        10256 (   0.0188116)
+Updated Ne at time   386.88 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  1021.52 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  1824.96 :  |      2337.79 ( 0.000213877)
+Updated Ne at time     2842 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  4129.52 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  5759.32 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  7822.52 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  10434.3 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  13740.6 :  |      2337.79 ( 0.000213877)
+Updated Ne at time    17926 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  23224.3 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  29931.4 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  38421.9 :  |      2337.79 ( 0.000213877)
+Updated Ne at time    49170 :  |      2337.79 ( 0.000213877)
+Updated Ne at time  62776.1 :  |      2337.79 ( 0.000213877)
+Updated Ne at time    80000 :  |      2337.79 ( 0.000213877)
+Forest state was created 247690 times
+Forest state destructor was called 247590 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 11
+EM step 12
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.09853e-18(1.7e-08 / 1.54752e+10)
+ popsize is equal to 197521 ( 387.782 / 0.000981622/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ popsize is equal to 10256 ( 1 / 4.87519e-05/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |       197521 ( 0.000981622)
+Updated Ne at time   386.88 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  1021.52 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  1824.96 :  |        10256 ( 4.87519e-05)
+Updated Ne at time     2842 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  4129.52 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  5759.32 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  7822.52 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  10434.3 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  13740.6 :  |        10256 ( 4.87519e-05)
+Updated Ne at time    17926 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  23224.3 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  29931.4 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  38421.9 :  |        10256 ( 4.87519e-05)
+Updated Ne at time    49170 :  |        10256 ( 4.87519e-05)
+Updated Ne at time  62776.1 :  |        10256 ( 4.87519e-05)
+Updated Ne at time    80000 :  |        10256 ( 4.87519e-05)
+Forest state was created 248049 times
+Forest state destructor was called 247949 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 12
+EM step 13
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.09853e-18(1.7e-08 / 1.54752e+10)
+ popsize is equal to 7.66144e+07 ( 387.88 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ popsize is equal to 197521 ( 1 / 2.53138e-06/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |  7.66144e+07 ( 2.53138e-06)
+Updated Ne at time   386.88 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  1021.52 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  1824.96 :  |       197521 ( 2.53138e-06)
+Updated Ne at time     2842 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  4129.52 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  5759.32 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  7822.52 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  10434.3 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  13740.6 :  |       197521 ( 2.53138e-06)
+Updated Ne at time    17926 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  23224.3 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  29931.4 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  38421.9 :  |       197521 ( 2.53138e-06)
+Updated Ne at time    49170 :  |       197521 ( 2.53138e-06)
+Updated Ne at time  62776.1 :  |       197521 ( 2.53138e-06)
+Updated Ne at time    80000 :  |       197521 ( 2.53138e-06)
+Forest state was created 248457 times
+Forest state destructor was called 248357 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 13
+EM step 14
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.09853e-18(1.7e-08 / 1.54752e+10)
+ popsize is equal to 2.97172e+10 ( 387.88 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ popsize is equal to 7.66144e+07 ( 1 / 6.52619e-09/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |  2.97172e+10 ( 6.52619e-09)
+Updated Ne at time   386.88 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  1021.52 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  1824.96 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time     2842 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  4129.52 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  5759.32 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  7822.52 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  10434.3 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  13740.6 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time    17926 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  23224.3 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  29931.4 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  38421.9 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time    49170 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time  62776.1 :  |  7.66144e+07 ( 6.52619e-09)
+Updated Ne at time    80000 :  |  7.66144e+07 ( 6.52619e-09)
+Forest state was created 248719 times
+Forest state destructor was called 248619 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 14
+EM step 15
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate nan(nan / nan)
+ popsize is equal to 1.15267e+13 ( 387.88 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ popsize is equal to 2.97172e+10 ( 1 / 1.68253e-11/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |  1.15267e+13 ( 1.68253e-11)
+Updated Ne at time   386.88 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  1021.52 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  1824.96 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time     2842 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  4129.52 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  5759.32 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  7822.52 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  10434.3 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  13740.6 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time    17926 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  23224.3 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  29931.4 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  38421.9 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time    49170 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time  62776.1 :  |  2.97172e+10 ( 1.68253e-11)
+Updated Ne at time    80000 :  |  2.97172e+10 ( 1.68253e-11)
+Forest state was created 248874 times
+Forest state destructor was called 248774 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 15
+EM step 16
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate nan(nan / nan)
+ popsize is equal to 4.47098e+15 ( 387.88 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ popsize is equal to 1.15267e+13 ( 1 / 4.33775e-14/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |  4.47098e+15 ( 4.33775e-14)
+Updated Ne at time   386.88 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  1021.52 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  1824.96 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time     2842 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  4129.52 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  5759.32 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  7822.52 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  10434.3 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  13740.6 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time    17926 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  23224.3 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  29931.4 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  38421.9 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time    49170 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time  62776.1 :  |  1.15267e+13 ( 4.33775e-14)
+Updated Ne at time    80000 :  |  1.15267e+13 ( 4.33775e-14)
+Forest state was created 249073 times
+Forest state destructor was called 248973 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 16
+EM step 17
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate nan(nan / nan)
+ popsize is equal to nan ( nan / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ popsize is equal to 4.47098e+15 ( 1 / 1.11832e-16/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |          nan ( 1.11832e-16)
+Updated Ne at time   386.88 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  1021.52 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  1824.96 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time     2842 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  4129.52 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  5759.32 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  7822.52 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  10434.3 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  13740.6 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time    17926 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  23224.3 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  29931.4 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  38421.9 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time    49170 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time  62776.1 :  |  4.47098e+15 ( 1.11832e-16)
+Updated Ne at time    80000 :  |  4.47098e+15 ( 1.11832e-16)
+Forest state was created 249173 times
+Forest state destructor was called 249073 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 17
+EM step 18
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.31741e-18(1.7e-08 / 1.29041e+10)
+ popsize is equal to 134.643 ( 269.299 / 1.00005/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ popsize is equal to 10000 ( 1 / 5e-05/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      134.643 (     1.00005)
+Updated Ne at time   386.88 :  |        10000 (       5e-05)
+Updated Ne at time  1021.52 :  |        10000 (       5e-05)
+Updated Ne at time  1824.96 :  |        10000 (       5e-05)
+Updated Ne at time     2842 :  |        10000 (       5e-05)
+Updated Ne at time  4129.52 :  |        10000 (       5e-05)
+Updated Ne at time  5759.32 :  |        10000 (       5e-05)
+Updated Ne at time  7822.52 :  |        10000 (       5e-05)
+Updated Ne at time  10434.3 :  |        10000 (       5e-05)
+Updated Ne at time  13740.6 :  |        10000 (       5e-05)
+Updated Ne at time    17926 :  |        10000 (       5e-05)
+Updated Ne at time  23224.3 :  |        10000 (       5e-05)
+Updated Ne at time  29931.4 :  |        10000 (       5e-05)
+Updated Ne at time  38421.9 :  |        10000 (       5e-05)
+Updated Ne at time    49170 :  |        10000 (       5e-05)
+Updated Ne at time  62776.1 :  |        10000 (       5e-05)
+Updated Ne at time    80000 :  |        10000 (       5e-05)
+Forest state was created 249415 times
+Forest state destructor was called 249315 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 18
+EM step 19
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.0986e-18(1.7e-08 / 1.54742e+10)
+ popsize is equal to 7543.58 ( 384.133 / 0.025461/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ popsize is equal to 134.643 ( 1 / 0.00371352/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |      7543.58 (    0.025461)
+Updated Ne at time   386.88 :  |      134.643 (  0.00371352)
+Updated Ne at time  1021.52 :  |      134.643 (  0.00371352)
+Updated Ne at time  1824.96 :  |      134.643 (  0.00371352)
+Updated Ne at time     2842 :  |      134.643 (  0.00371352)
+Updated Ne at time  4129.52 :  |      134.643 (  0.00371352)
+Updated Ne at time  5759.32 :  |      134.643 (  0.00371352)
+Updated Ne at time  7822.52 :  |      134.643 (  0.00371352)
+Updated Ne at time  10434.3 :  |      134.643 (  0.00371352)
+Updated Ne at time  13740.6 :  |      134.643 (  0.00371352)
+Updated Ne at time    17926 :  |      134.643 (  0.00371352)
+Updated Ne at time  23224.3 :  |      134.643 (  0.00371352)
+Updated Ne at time  29931.4 :  |      134.643 (  0.00371352)
+Updated Ne at time  38421.9 :  |      134.643 (  0.00371352)
+Updated Ne at time    49170 :  |      134.643 (  0.00371352)
+Updated Ne at time  62776.1 :  |      134.643 (  0.00371352)
+Updated Ne at time    80000 :  |      134.643 (  0.00371352)
+Forest state was created 249783 times
+Forest state destructor was called 249683 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 19
+EM step 20
+ Particle filtering step   7% completed. Particle filtering step  10% completed. Particle filtering step  15% completed. Particle filtering step  26% completed. Particle filtering step  37% completed. Particle filtering step  43% completed. Particle filtering step  45% completed. Particle filtering step  51% completed. Particle filtering step  53% completed. Particle filtering step  56% completed. Particle filtering step  57% completed. Particle filtering step  63% completed. Particle filtering step  66% completed. Particle filtering step  69% completed. Particle filtering step  78% completed. Particle filtering step  87% completed. Particle filtering step  93% completed. Particle filtering step  95% completed. Particle filtering step  98% completed. Particle filtering step 100% completed.
+  Segment data is beyond loci length
+ Inference step completed.
+ MODEL IS RESET at base 2e+07
+ set recombination rate 1.09853e-18(1.7e-08 / 1.54752e+10)
+ popsize is equal to 111982 ( 387.389 / 0.00172969/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ popsize is equal to 7543.58 ( 1 / 6.62815e-05/2)
+ check_model_updated_Ne 
+Updated Ne at time        0 :  |       111982 (  0.00172969)
+Updated Ne at time   386.88 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  1021.52 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  1824.96 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time     2842 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  4129.52 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  5759.32 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  7822.52 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  10434.3 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  13740.6 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time    17926 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  23224.3 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  29931.4 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  38421.9 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time    49170 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time  62776.1 :  |      7543.58 ( 6.62815e-05)
+Updated Ne at time    80000 :  |      7543.58 ( 6.62815e-05)
+Forest state was created 250013 times
+Forest state destructor was called 249913 times
+Actual recombination 0
+Actual recomb op is 0
+End of EM_step 20
+###########################
+#        smcsmc log       #
+###########################
+Program was compiled on: Tue-Jun--2-13:20:44-UTC-2015
+smcsmc version: d8278856120804181928282977acfa87d7efd7ee
+scrm version: +d89d4e6b7560d72cebedaa2054030170f94c547e
+smcsmc parameters: 
+HIST saved in file: pfARGHIST
+Ne saved in file: pfARGNe
+Segment Data file: sim-1Samples2msdata1.seg
+     EM steps =        20
+ Constant lag =      1000
+            N =       100
+          ESS =       0.5 (by default)
+scrm model parameters: 
+ Extract window =         0
+    Random seed =18446744073709551615
+    Sample size =         2
+     Seq length =  20000000
+  mutation rate =     1e-08
+    recomb rate =     1e-09
+inferred recomb rate = 1.09853e-18
+Pop size (at Generation):
+  (       0 ) |     111982
+  (  386.88 ) |    7543.58
+  ( 1021.52 ) |    7543.58
+  ( 1824.96 ) |    7543.58
+  (    2842 ) |    7543.58
+  ( 4129.52 ) |    7543.58
+  ( 5759.32 ) |    7543.58
+  ( 7822.52 ) |    7543.58
+  ( 10434.3 ) |    7543.58
+  ( 13740.6 ) |    7543.58
+  (   17926 ) |    7543.58
+  ( 23224.3 ) |    7543.58
+  ( 29931.4 ) |    7543.58
+  ( 38421.9 ) |    7543.58
+  (   49170 ) |    7543.58
+  ( 62776.1 ) |    7543.58
+  (   80000 ) |    7543.58
+Arena: allocated 696540 blocks, deallocated 696540 blocks, max in use 5405 blocks, num skips 0
+Actual recombination 0

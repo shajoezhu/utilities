@@ -1,0 +1,40 @@
+###########################
+#        smcsmc log       #
+###########################
+Program was compiled on: Tue-Jun--2-13:20:44-UTC-2015
+smcsmc version: d8278856120804181928282977acfa87d7efd7ee
+scrm version: +d89d4e6b7560d72cebedaa2054030170f94c547e
+smcsmc parameters: 
+HIST saved in file: pfARGHIST
+Ne saved in file: pfARGNe
+Segment Data file: sim-1Samples2msdata1.seg
+     EM steps =        20
+ Constant lag =      1000
+            N =       100
+          ESS =       0.5 (by default)
+scrm model parameters: 
+ Extract window =         0
+    Random seed =18446744073709551615
+    Sample size =         2
+     Seq length =  20000000
+  mutation rate =     1e-08
+    recomb rate =     1e-09
+inferred recomb rate = 1.09853e-18
+Pop size (at Generation):
+  (       0 ) |     111982
+  (  386.88 ) |    7543.58
+  ( 1021.52 ) |    7543.58
+  ( 1824.96 ) |    7543.58
+  (    2842 ) |    7543.58
+  ( 4129.52 ) |    7543.58
+  ( 5759.32 ) |    7543.58
+  ( 7822.52 ) |    7543.58
+  ( 10434.3 ) |    7543.58
+  ( 13740.6 ) |    7543.58
+  (   17926 ) |    7543.58
+  ( 23224.3 ) |    7543.58
+  ( 29931.4 ) |    7543.58
+  ( 38421.9 ) |    7543.58
+  (   49170 ) |    7543.58
+  ( 62776.1 ) |    7543.58
+  (   80000 ) |    7543.58
